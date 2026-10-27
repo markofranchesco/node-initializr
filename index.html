@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<title>Node Initializr — Generador de proyectos Node.js, Express y TypeScript</title>
+<meta name="description" content="Node Initializr: genera un proyecto Node.js listo para comenzar. Selecciona Express, TypeScript, MongoDB, Mongoose, Zod, Socket.IO y otras dependencias; explora y descarga tu ZIP gratis."/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta name="keywords" content="Node Initializr, Node.js, Express, TypeScript, generador Node.js, Express Initializr, proyecto backend, npm, Mongoose, Zod, Socket.IO"/>
+<meta name="theme-color" content="#6db33f"/>
+<meta name="application-name" content="Node Initializr"/>
+<meta name="author" content="Fábrica Abstracta S.A.C."/>
+<meta name="creator" content="Marko Franchesco"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta property="og:locale:alternate" content="en_US"/>
+<meta property="og:locale:alternate" content="pt_BR"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Node Initializr"/>
+<meta property="og:title" content="Node Initializr — Genera tu proyecto Node.js"/>
+<meta property="og:description" content="Configura dependencias de Node.js y Express, revisa los archivos y descarga tu proyecto ZIP desde el navegador."/>
+<meta property="og:locale" content="es_PE"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node Initializr — Generador de proyectos Node.js"/>
+<meta name="twitter:description" content="Selecciona Express, TypeScript y tus dependencias favoritas y descarga un proyecto Node.js en ZIP."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M28.5%204.2a7%207%200%200%201%207%200L55.8%2016a7%207%200%200%201%203.5%206.1v19.8a7%207%200%200%201-3.5%206.1L35.5%2059.8a7%207%200%200%201-7%200L8.2%2048a7%207%200%200%201-3.5-6.1V22.1a7%207%200%200%201%203.5-6.1Z%22%20fill%3D%22none%22%20stroke%3D%22%236db33f%22%20stroke-width%3D%224.6%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M26.1%2021v19.6c0%205.5-3%208.4-8.2%208.4-3.1%200-5.6-1.3-7.1-3.6M47.1%2025.7c-2.3-2.9-5.6-4.4-9.5-4.4-4.6%200-7.8%202.6-7.8%206.4%200%209.1%2017.7%203.6%2017.7%2013%200%205.2-4.2%208.3-9.5%208.3-4.3%200-7.5-2-9.6-5.1%22%20fill%3D%22none%22%20stroke%3D%22%236db33f%22%20stroke-width%3D%224.7%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>/* Node Initializr V10 — Single-file application */
+:root{--green:#6db33f;--background:#fff;--text:#101010;--muted:#657179;--line:#dce4e6;--footer:#edf3f3;--panel:#fff;--hover:#e8f5f9;--dialog-hover:#e3f3fa;--contrast:#fff;--danger:#d95549;--rail:10vw;color-scheme:light}
+html[data-theme=dark]{--background:#1b1f22;--text:#f5f6f7;--muted:#c1cbd0;--line:#464d50;--footer:#25292c;--panel:#272b2d;--hover:#194d69;--dialog-hover:#195372;--contrast:#111;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font:14px Arial,Helvetica,sans-serif;background:var(--background);color:var(--text)}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}input,button{border-radius:0}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:2px}.hidden{display:none!important}.modal-open{overflow:hidden}.shell{width:90%;height:100vh;height:100dvh;margin:0;display:grid;grid-template-columns:var(--rail) minmax(0,1fr);border-right:1px solid var(--line)}.rail{display:flex;flex-direction:column;align-items:flex-end;gap:21px;padding:19px 24px 14px 0;border-right:1px solid var(--line);min-width:0}.rail button,.rail a{border:0;background:none;color:var(--text);display:flex;align-items:center;justify-content:center;width:38px;height:39px;padding:4px;text-decoration:none}.rail svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}.rail #menu-button svg{width:36px;height:36px;stroke-width:2.8}.rail .rail-rule{width:37px;border-top:1px solid var(--line);margin-top:0;margin-bottom:1px}.rail .rail-bottom{margin-top:auto}.rail .github-icon{width:27px;height:27px;fill:var(--text);stroke:none}.rail button:hover,.rail a:hover{color:var(--green)}.rail a:hover .github-icon{fill:var(--green)}
+.main{min-width:0;min-height:0;display:grid;grid-template-rows:109px minmax(0,1fr) 76px}.topbar{position:relative;min-width:0;margin:0 30px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;padding-top:23px}.brand{display:flex;align-items:center;gap:10px;font-size:31px;font-weight:800;letter-spacing:-1.6px;white-space:nowrap}.brand-mark{width:44px;height:44px}.brand-mark svg{display:block;width:100%;height:100%}.brand-mark rect{fill:var(--green)}.brand-mark text{fill:white;font:bold 17px monospace;letter-spacing:-2px}.brand-name{color:var(--green)}.brand-extra{color:var(--text)}.top-controls{position:absolute;right:-78px;top:16px;z-index:2}.theme-switch{border:2px solid var(--text);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;width:36px;height:66px;background:var(--background)}.theme-switch button{height:31px;border:0;background:var(--background);color:var(--text);display:grid;place-items:center;padding:3px}.theme-switch button.active{background:var(--text);color:var(--background)}.theme-switch button:hover:not(.active){background:var(--hover)}.theme-switch svg{width:21px;height:21px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.workarea{min-height:0;display:grid;grid-template-columns:50% 50%;padding:27px 30px 54px}.left-pane{min-width:0;border-right:1px solid var(--line);padding-right:33px}.right-pane{min-width:0;min-height:0;overflow-y:auto;padding-left:33px;scrollbar-width:thin}.grid-two{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}.form-group{margin:5px 0 24px;min-width:0}.form-title,.section-title{font-size:15px;font-weight:bold;margin:0 0 9px}.section-title{margin:2px 0 12px}.choice-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.choice{display:inline-flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;min-height:23px}.choice input[type=radio]{appearance:none;background:transparent;border:2px solid var(--text);border-radius:50%;width:15px;height:15px;margin:0;flex:none;cursor:pointer}.choice input[type=radio]:checked{background:var(--green);border-color:var(--green)}.choice:has(input:checked){color:var(--green)}.choice:hover{color:var(--green)}.tag-hint{font-size:12px;font-weight:400;color:var(--muted)}.metadata{margin:0}.field{display:grid;grid-template-columns:105px minmax(0,1fr);align-items:center;gap:14px;margin:0 0 10px;min-height:33px}.field>label,.field>.field-label{text-align:right;white-space:nowrap}.field input:not([type=radio]):not([type=checkbox]){width:100%;background:transparent;color:var(--text);border:0;border-bottom:3px solid var(--text);border-radius:0;outline:0;min-width:0;height:34px;padding:5px 1px 5px}.field input:focus:not([type=radio]):not([type=checkbox]){border-bottom-color:var(--green)}.field input[type=number]{appearance:textfield}.field .small-hint{grid-column:2;font-size:11px;color:var(--danger);margin-top:-5px}.field.invalid input{border-bottom-color:var(--danger)!important}.field .field-choice{grid-column:2}.field input[type=checkbox]{accent-color:var(--green);width:15px;height:15px;margin:0}.field .choice-row{gap:8px 18px}.dependencies-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 0 7px;border-bottom:1px solid var(--line)}.dependencies-head .section-title{margin:0}.outline-btn{border:2px solid var(--text);color:var(--text);background:transparent;font-size:13px;line-height:1;font-weight:700;min-height:41px;padding:11px 16px;white-space:nowrap;border-radius:3px}.outline-btn:hover{background:var(--text);color:var(--background)}.shortcut{font-weight:400;margin-left:10px}.empty-state{font-style:italic;margin:18px 0;color:var(--text)}.selected-dep{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:14px 0 16px}.selected-copy{min-width:0;flex:1}.selected-dep h3{display:inline;font-size:15px;font-weight:bold;margin:0 10px 0 0}.dep-kind{display:inline-block;background:var(--green);color:white;border-radius:3px;font-size:11px;font-weight:700;line-height:1.3;padding:3px 6px;text-transform:uppercase}.dep-detail{line-height:1.5;margin-top:4px}.remove-dep{border:0;background:none;color:var(--danger);width:30px;height:30px;display:grid;place-items:center;padding:2px;flex:none}.remove-dep svg{width:24px;height:24px}.remove-dep:hover{transform:scale(1.13)}.selection-note{margin-top:10px}.warning-box{color:var(--danger);padding:7px 0;font-size:12px;line-height:1.5}.actionbar{display:flex;justify-content:center;align-items:center;gap:14px;background:var(--footer);min-width:0;min-height:76px}.actionbar .outline-btn{background:var(--background);padding:11px 20px;min-height:46px}.actionbar .outline-btn:hover{background:var(--text);color:var(--background)}.actionbar #more-button{font-size:17px;min-width:58px}
+.overlay{position:fixed;inset:0;z-index:25;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(229,240,241,.74)}html[data-theme=dark] .overlay{background:rgba(0,0,0,.68)}.dialog{width:min(690px,100%);max-height:min(84vh,745px);display:flex;flex-direction:column;background:var(--panel);color:var(--text);border:0;box-shadow:none;min-height:0}.search-top{display:flex;align-items:center;min-height:45px;gap:16px;border-bottom:1px solid var(--line);padding:0 13px}.search-top input{flex:1;min-width:0;height:43px;background:transparent;border:0;outline:0;color:var(--text);font:italic 14px Arial,Helvetica,sans-serif}.search-top input::placeholder{color:var(--muted)}.search-tip{font-size:12px;color:var(--text);white-space:nowrap}.search-close{display:none}.catalog-list{overflow:auto;min-height:0;scrollbar-width:thin;scrollbar-color:var(--muted) transparent}.catalog-heading{padding:11px 10px 9px;border-bottom:1px solid var(--line);height:41px}.catalog-item{display:flex;width:100%;min-height:68px;padding:12px 13px;gap:8px;align-items:center;text-align:left;border:0;border-bottom:1px solid var(--line);color:var(--text);background:transparent}.catalog-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:6px}.catalog-item .name{font-size:15px;font-weight:700}.catalog-item .sub{font-size:13px;line-height:1.45}.catalog-item .catalog-picked{font-size:22px;margin-left:auto;font-weight:700}.catalog-item[aria-pressed=true] .catalog-picked{color:var(--green)}.catalog-item.focused{background:var(--green);color:white}.catalog-item.focused .catalog-picked{color:white}.catalog-item:hover{background:var(--dialog-hover);color:var(--text)}.catalog-item:hover .catalog-picked{color:var(--green)}.catalog-empty{padding:35px 15px;text-align:center;color:var(--muted)}
+.drawer-overlay{background:var(--green)!important;display:block;padding:0}.drawer{background:var(--green);height:100vh;height:100dvh;width:100%;display:flex;position:relative}.drawer-close{position:absolute;left:calc(10vw - 59px);top:28px;background:none;border:0;color:#111;width:46px;height:46px;padding:5px}.drawer-close svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}.drawer-inner{padding:26px 30px 20px;min-width:0;margin-left:10vw;border-left:1px solid rgba(255,255,255,.16);width:90%}.drawer-brand{display:flex;align-items:center;gap:10px;color:white;font-size:30px;font-weight:800;letter-spacing:-1.3px;margin-bottom:52px}.drawer-brand strong{color:white}.drawer-logo{width:44px;height:44px;border-radius:9px;background:white;color:var(--green);display:grid;place-items:center;font-size:18px;font-family:monospace}.drawer-inner nav{display:flex;flex-direction:column;align-items:flex-start;gap:17px}.menu-link{font:700 28px Arial,Helvetica,sans-serif;text-decoration:none;color:white;background:none;border:0;padding:0;cursor:pointer;text-align:left}.menu-link:hover{text-decoration:underline}
+.aux-dialog{background:var(--background);width:min(850px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;border:1px solid var(--line);color:var(--text);min-height:0}.aux-head{display:flex;align-items:center;justify-content:space-between;min-height:55px;padding:10px 14px;border-bottom:1px solid var(--line)}.aux-head h2{margin:0;font-size:18px}.aux-head .outline-btn{font-size:12px;min-height:30px;padding:7px 15px}.aux-footer{border-top:1px solid var(--line);padding:13px;display:flex;justify-content:center}.aux-footer .outline-btn{min-height:39px}.history-content{padding:14px 18px 18px;overflow:auto;max-height:55vh}.history-date{font-size:13px;margin:0 0 10px}.history-entry{background:var(--footer);display:flex;align-items:center;gap:18px;padding:12px 10px;margin-bottom:5px;min-height:53px;font-size:13px}.history-time{width:50px;flex:none}.history-text{min-width:0;flex:1;line-height:1.6}.history-text strong{display:block}.history-text span{display:block;font-size:12px}.history-entry button{background:transparent;border:0;color:var(--muted);width:28px;height:30px;padding:2px}.history-entry svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8}.history-entry button:hover{color:var(--green)}.history-empty{margin:20px 0;color:var(--muted)}.advanced-dialog{width:min(650px,100%)}.advanced-body{padding:18px 25px;overflow-y:auto}.advanced-body .metadata{max-width:580px}.advanced-body h3{font-size:15px;margin:20px 0 12px}.advanced-body .field{margin-bottom:13px}.bare-close{border:0;background:none;color:var(--text);font-size:26px}.custom-row{display:flex;gap:9px}.custom-row input{min-width:0;background:transparent;color:var(--text);border:1px solid var(--line);padding:9px}.custom-row input:first-child{flex:1}.custom-row #custom-version{width:70px}.custom-row .outline-btn{min-height:37px}.custom-hint{font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--background);padding:12px 16px;z-index:70;max-width:95%;text-align:center;border-radius:4px;box-shadow:0 5px 24px #0003}
+@media (min-width:900px) and (max-height:820px){.main{grid-template-rows:91px minmax(0,1fr) 65px}.topbar{padding-top:17px}.workarea{padding-top:19px;padding-bottom:26px}.form-group{margin-bottom:18px}.field{margin-bottom:7px}.actionbar{min-height:65px}.actionbar .outline-btn{min-height:43px}}
+@media (max-width:1050px){.shell{width:100%;--rail:75px}.rail{padding-right:16px}.top-controls{right:0;top:15px}.topbar{margin-right:75px}.workarea{grid-template-columns:51% 49%;padding:24px 21px}.left-pane{padding-right:18px}.right-pane{padding-left:18px}.grid-two{column-gap:10px}.choice-row{gap:6px 11px}.field{grid-template-columns:89px minmax(0,1fr);gap:9px}.drawer-inner{margin-left:75px}.drawer-close{left:12px}}
+@media (max-width:720px){.shell{height:auto;min-height:100dvh;width:100%;--rail:54px;grid-template-columns:var(--rail) minmax(0,1fr)}.rail{padding:15px 7px 14px 0;gap:15px}.rail button,.rail a{width:35px;height:35px}.rail svg{width:25px;height:25px}.rail #menu-button svg{width:29px;height:29px}.rail .rail-rule{width:30px}.main{height:auto;min-height:100dvh;grid-template-rows:83px 1fr auto}.topbar{margin:0 12px;padding-top:18px}.brand{font-size:23px;gap:7px;letter-spacing:-1px}.brand-mark{width:33px;height:33px}.top-controls{right:0;top:10px}.theme-switch{width:30px;height:57px;border-width:1px}.theme-switch button{height:28px}.theme-switch svg{width:17px;height:17px}.workarea{display:flex;flex-direction:column;padding:20px 12px 34px;gap:20px}.left-pane{border:0;padding:0}.right-pane{border-top:1px solid var(--line);padding:18px 0 0;overflow:visible}.grid-two{gap:12px}.form-group{margin-bottom:19px}.field{grid-template-columns:84px minmax(0,1fr);gap:9px}.dependencies-head{gap:8px}.dependencies-head .outline-btn{padding:9px;font-size:11px;min-height:37px}.dependencies-head .shortcut{font-size:10px;margin-left:3px}.actionbar{position:sticky;bottom:0;padding:12px 4px;min-height:65px;z-index:5}.actionbar .outline-btn{font-size:12px;padding:9px 12px;min-height:41px}.actionbar #more-button{min-width:45px}.overlay{padding:14px}.dialog{max-height:86dvh}.search-top{padding:0 9px}.search-tip{display:none}.search-close{display:block;border:0;background:none;color:var(--text);font-size:22px}.catalog-item{padding:11px}.drawer-inner{margin-left:54px;padding:22px 18px}.drawer-close{left:5px;top:19px}.drawer-brand{font-size:22px;margin-bottom:42px}.drawer-logo{width:32px;height:32px}.menu-link{font-size:21px}.aux-dialog{max-height:90dvh}.advanced-body{padding:16px 10px}.history-content{padding:12px 8px}.history-entry{gap:7px}.history-time{width:39px}.history-text span{font-size:11px}}
+@media (max-width:380px){.grid-two{grid-template-columns:1fr}.brand{font-size:20px}.brand-mark{width:29px;height:29px}.top-controls{right:0}.topbar{margin-right:10px}.form-group{margin-bottom:13px}.field{grid-template-columns:74px 1fr}.dependencies-head{align-items:flex-start;flex-wrap:wrap}.outline-btn{white-space:normal}}
+
+
+/* V3 refinamiento: Spring-like proportions, single page with real Explorer */
+.search-top input:focus-visible{outline:0;box-shadow:none}
+:root{--rail:10vw;--focus:#2c7b49}
+html,body{overflow:hidden}
+.shell{width:90%;max-width:none;overflow:visible}
+.main{grid-template-rows:109px minmax(0,1fr) 76px}
+.workarea{padding:27px 30px 46px;grid-template-columns:50% 50%}
+.left-pane{min-height:0;overflow-y:auto;scrollbar-width:thin;padding-right:32px}
+.right-pane{padding-left:32px}
+.grid-two{column-gap:22px}
+.form-group{margin:5px 0 22px}
+.form-title,.section-title{font-size:15px;margin-bottom:10px}
+.field{margin-bottom:9px;min-height:33px;grid-template-columns:92px minmax(0,1fr);gap:14px}
+.field>label,.field>.field-label{font-size:14px}
+.field.settings-field{margin-bottom:10px}
+.field input:not([type=radio]):not([type=checkbox]){border-bottom-width:3px;outline:0}
+.field input:focus:not([type=radio]):not([type=checkbox]){border-bottom-color:var(--text)}
+.choice-row{gap:6px 16px}.choice{font-size:14px}
+.choice input[type=radio]:focus:not(:focus-visible){outline:none}
+.outline-btn{border-radius:3px;min-height:41px;padding:10px 16px;font-size:13px}
+.outline-btn:focus:not(:focus-visible),.rail button:focus:not(:focus-visible),.theme-switch button:focus:not(:focus-visible){outline:none}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.actionbar{gap:14px}.actionbar .outline-btn{min-height:45px;padding:10px 19px}.actionbar #more-button{min-width:56px}
+.rail{gap:21px}.rail .github-icon{width:28px;height:28px}
+.dialog{width:min(720px,100%);max-height:min(calc(100dvh - 100px),790px)}
+#catalog-overlay{align-items:flex-start;padding:clamp(24px,3.5vh,40px) 20px 20px}
+.search-top{min-height:46px;padding:0 13px}.search-top input{height:46px}
+.catalog-heading{height:41px;padding:11px 11px 9px}
+.catalog-item{min-height:70px;padding:12px 13px}
+.catalog-copy{gap:7px}.catalog-item .name{font-size:15px}.catalog-item .sub{font-size:14px;line-height:1.45}
+.catalog-item:hover{background:var(--dialog-hover);color:var(--text)}
+.catalog-item.focused,.catalog-item.focused:hover{background:var(--green);color:white}
+.catalog-item.focused .catalog-picked,.catalog-item.focused:hover .catalog-picked{color:white}
+.catalog-item[aria-pressed=true]:not(.focused) .catalog-picked{color:var(--green)}
+.history-entry .history-text strong{font-size:14px}.history-entry .history-text span{font-size:13px}
+.history-entry .history-actions{display:flex;gap:3px}.history-entry button{flex:none}
+.history-entry.is-favorite{box-shadow:inset 3px 0 0 var(--green)}
+.history-entry .favorite-active{color:var(--green)}
+.history-rename-input{width:100%;height:28px;background:var(--panel);color:var(--text);border:1px solid var(--green);padding:4px}
+/* Fullscreen Explorer: actual file map, unified with the ZIP */
+.explorer-overlay{position:fixed;inset:0;z-index:60;background:var(--background);color:var(--text)}
+.explorer-shell{display:grid;grid-template-columns:10vw minmax(0,1fr);width:90%;height:100dvh;border-right:1px solid var(--line)}
+.explorer-rail{min-height:0;display:flex;flex-direction:column;align-items:flex-end;padding:23px 25px 14px 0;gap:22px;border-right:1px solid var(--line)}
+.explorer-rail button,.explorer-rail a{border:0;background:transparent;color:var(--text);height:40px;width:40px;padding:4px;display:grid;place-items:center;cursor:pointer}
+.explorer-rail svg{width:33px;height:33px;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round}
+.explorer-rail .explorer-github{margin-top:auto}.explorer-rail .explorer-github svg{width:28px;height:28px;stroke:none;fill:currentColor}
+.explorer-rail-rule{width:37px;border-top:1px solid var(--line)}
+.explorer-rail button:hover,.explorer-rail a:hover{color:var(--green)}
+.explorer-main{position:relative;display:grid;grid-template-rows:minmax(0,1fr) 76px;min-width:0;min-height:0}
+.explorer-top-controls{position:absolute;top:17px;right:-79px;z-index:2}
+.explorer-top-controls .theme-switch{width:36px;height:66px}
+.explorer-layout{display:grid;grid-template-columns:285px minmax(0,1fr);gap:27px;min-height:0;min-width:0;padding:26px 30px 38px}
+.explorer-tree-pane{display:flex;flex-direction:column;border:1px solid var(--line);min-height:0;min-width:0;overflow:hidden}
+.explorer-tree-heading{font-size:14px;font-weight:700;margin:0;padding:13px 15px;border-bottom:1px solid var(--line);flex:none}
+.explorer-tree{overflow:auto;padding:5px 0 22px;min-height:0;scrollbar-width:thin}
+.explorer-tree button{color:var(--text);background:transparent;border:0;width:100%;min-height:30px;padding:4px 7px;display:flex;align-items:center;gap:7px;text-align:left;white-space:nowrap;font-size:13px;overflow:hidden}
+.explorer-tree button span.tree-label{overflow:hidden;text-overflow:ellipsis}
+.explorer-tree button:hover{background:var(--hover)}
+.explorer-tree button.active{background:var(--footer);color:var(--green);font-weight:700}
+.explorer-tree .tree-arrow{font-size:12px;width:10px;flex:none}
+.explorer-tree .tree-icon{width:18px;flex:none;text-align:center;font-size:16px;line-height:16px}
+.explorer-tree .tree-icon.file-icon{font-size:16px}
+.explorer-editor{display:grid;grid-template-rows:44px minmax(0,1fr);min-height:0;min-width:0}
+.explorer-tools{display:flex;justify-content:center;gap:15px;align-items:flex-start}
+.explorer-tools .outline-btn{font-size:12px;min-height:34px;padding:8px 14px}
+.explorer-code-scroll{border:1px solid var(--line);overflow:auto;min-height:0;min-width:0;scrollbar-width:thin;background:var(--background)}
+.explorer-code{font:12px/1.75 Consolas,Monaco,'Courier New',monospace;min-width:max-content;padding:4px 0 24px}
+.code-line{display:grid;grid-template-columns:40px minmax(0,1fr);min-height:21px}
+.code-number{border-right:1px solid var(--line);color:#adb9bf;text-align:right;padding-right:12px;user-select:none}
+.code-text{padding:0 15px;white-space:pre;tab-size:2}
+.syntax-string{color:#0e8a53}.syntax-keyword{color:#d01c6c}.syntax-number{color:#b87810}.syntax-comment{color:#859098;font-style:italic}
+html[data-theme=dark] .syntax-string{color:#9ecb76}html[data-theme=dark] .syntax-keyword{color:#e775ba}html[data-theme=dark] .syntax-number{color:#e3ba71}
+.explorer-footer{background:var(--footer);display:flex;justify-content:center;align-items:center;gap:14px}
+.explorer-footer .outline-btn{min-height:43px;padding:10px 17px;background:var(--background)}
+.explorer-footer .outline-btn:hover{background:var(--text);color:var(--background)}
+@media(min-width:900px) and (max-height:820px){.workarea{padding:20px 30px 20px}.form-group{margin-bottom:15px}.field{margin-bottom:7px}.explorer-main{grid-template-rows:minmax(0,1fr) 65px}.explorer-layout{padding:20px 26px 25px}}
+@media(max-width:1050px){.explorer-shell{width:100%;grid-template-columns:75px minmax(0,1fr)}.explorer-rail{padding-right:16px}.explorer-layout{grid-template-columns:235px minmax(0,1fr);gap:16px;padding:22px 16px}.explorer-top-controls{right:8px;top:10px}.left-pane{padding-right:15px}.right-pane{padding-left:15px}}
+@media(max-width:720px){html,body{overflow:visible;height:auto;min-height:100%}.shell{width:100%;height:auto;min-height:100dvh}.main{height:auto;grid-template-rows:83px minmax(0,1fr) auto}.workarea{padding:20px 12px 34px}.left-pane{overflow:visible;padding-right:0}.right-pane{overflow:visible;padding-left:0}.field{grid-template-columns:78px minmax(0,1fr);gap:8px}.field.settings-field .choice-row{gap:6px 12px}.actionbar{gap:7px;flex-wrap:nowrap}.actionbar .outline-btn{padding:9px 8px;font-size:11px}.actionbar #more-button{min-width:37px}.shortcut{margin-left:4px}.dialog{width:100%;max-height:calc(100dvh - 32px)}#catalog-overlay{padding:16px 10px}.explorer-shell{grid-template-columns:52px minmax(0,1fr)}.explorer-rail{padding:14px 8px 11px 0;gap:12px}.explorer-rail button,.explorer-rail a{width:34px;height:34px}.explorer-rail svg{width:26px;height:26px}.explorer-rail-rule{width:28px}.explorer-main{grid-template-rows:minmax(0,1fr) 70px}.explorer-layout{grid-template-columns:minmax(0,1fr);grid-template-rows:180px minmax(0,1fr);gap:12px;padding:15px 10px}.explorer-editor{grid-template-rows:40px minmax(0,1fr)}.explorer-top-controls{right:8px;top:10px}.explorer-tools{justify-content:flex-end;padding-right:42px;gap:5px}.explorer-tools .outline-btn{min-height:30px;padding:7px}.explorer-footer{gap:8px}.explorer-footer .outline-btn{padding:9px 8px;font-size:11px}.explorer-tree-heading{padding:7px 12px}.explorer-tree button{min-height:26px}}
+@media(max-width:420px){.grid-two{grid-template-columns:1fr}.brand{font-size:21px}.actionbar .shortcut{font-size:9px}.actionbar .outline-btn{font-size:10px}}
+
+/* V4: Spring Initializr-like layout + general scrolling, refined typography. */
+:root{--green:#6db33f;--dialog-hover:#e5f2f8}
+html[data-theme=dark]{--dialog-hover:#175374}
+html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto;font-family:'Segoe UI','Open Sans',Arial,Helvetica,sans-serif;font-size:14px}
+.shell{min-height:100dvh;height:auto;width:90%;overflow:visible;grid-template-columns:var(--rail) minmax(0,1fr)}
+.rail{position:sticky;top:0;height:100dvh;align-self:start}
+.main{display:flex;flex-direction:column;min-height:100dvh;min-width:0}
+.topbar{flex:none;height:110px}
+.brand{font-family:'Segoe UI','Open Sans',Arial,sans-serif;letter-spacing:-1.25px;text-decoration:none;font-weight:750;gap:9px}
+.brand:hover .brand-name{text-decoration:none}
+.workarea{flex:1 0 auto;display:grid;grid-template-columns:minmax(0,50%) minmax(0,50%);align-items:stretch;min-height:0;padding:27px 30px 58px}
+.left-pane{overflow:visible;padding-right:32px;border-right:1px solid var(--line)}
+.right-pane{overflow:visible;min-height:0;padding-left:32px}
+.grid-two{column-gap:18px}
+.form-group{margin:5px 0 20px}
+.form-title,.section-title{font-size:15px;margin-bottom:9px}
+.field{grid-template-columns:92px minmax(0,1fr);gap:15px;min-height:31px;margin:0 0 7px}
+.field>label,.field>.field-label{font-size:14px}
+.field input:not([type=radio]):not([type=checkbox]){height:33px;border-bottom:3px solid var(--text);font-family:inherit;font-size:14px}
+.field input:not([type=radio]):not([type=checkbox]):focus{outline:none;border-bottom-color:var(--green)}
+.field input:not([type=radio]):not([type=checkbox]):focus-visible{outline:none}
+.field .choice-row{gap:6px 17px}
+.field.settings-field{margin-bottom:7px}
+.choice{font-size:14px}
+.choice input[type=radio]:focus{outline:0}
+.choice input[type=radio]:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.field input[type=checkbox]:focus{outline:0}
+.field input[type=checkbox]:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.outline-btn{font-family:inherit;border-radius:3px;font-size:13px;font-weight:700;min-height:39px;padding:10px 15px}
+.outline-btn:focus,.rail button:focus,.rail a:focus{outline:none}
+.outline-btn:focus-visible,.rail button:focus-visible,.rail a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.dependencies-head{padding-bottom:7px}
+.selected-dep{padding:13px 0 14px}
+.selected-dep h3{font-size:15px}
+.dep-kind{font-size:11px;padding:2px 6px}
+.dep-detail{font-size:14px;line-height:1.43}
+.actionbar{position:sticky;bottom:0;z-index:10;flex:none;min-height:79px;padding:8px 10px;gap:15px;border-top:0;background:var(--footer)}
+.actionbar .outline-btn{min-height:43px;padding:10px 20px;background:var(--background)}
+.overlay{z-index:30}
+.dialog{width:min(720px,calc(100vw - 40px));max-height:calc(100dvh - 80px)}
+#catalog-overlay{align-items:flex-start;padding:36px 20px 22px}
+.catalog-item[aria-pressed=true]:not(.focused){background:var(--dialog-hover);color:var(--text)}
+.catalog-item[aria-pressed=true]:not(.focused):hover{background:var(--dialog-hover);color:var(--text)}
+.catalog-item[aria-pressed=true]:not(.focused) .catalog-picked{color:var(--text)}
+.catalog-item.focused,.catalog-item.focused:hover{background:var(--green)!important;color:white!important}
+.catalog-item:hover:not(.focused){background:var(--dialog-hover);color:var(--text)}
+.catalog-item{min-height:68px}
+.catalog-item .catalog-picked{width:16px;flex:none}
+.catalog-custom .catalog-heading{height:auto}
+.catalog-custom-label{font-size:12px;color:var(--muted);margin-left:7px}
+.catalog-custom .custom-row{padding:11px 14px 16px}
+.catalog-custom .custom-row input{height:36px}
+.catalog-custom #custom-version{width:88px}
+.explorer-overlay{display:block!important;visibility:visible;transform:translate3d(0,100%,0);transition:transform 340ms cubic-bezier(.2,.7,.22,1),visibility 340ms;will-change:transform;pointer-events:none;z-index:60}
+.explorer-overlay.is-open{transform:translate3d(0,0,0);pointer-events:auto;visibility:visible}
+.explorer-overlay.hidden{display:block!important;visibility:hidden;pointer-events:none;transform:translate3d(0,100%,0)}
+.explorer-shell{background:var(--background)}
+.explorer-main{min-height:0}
+@media(prefers-reduced-motion:reduce){.explorer-overlay{transition:none}}
+@media(max-width:720px){
+  html,body{height:auto;min-height:100%;overflow-y:auto}
+  .shell{width:100%;min-height:100dvh;height:auto;--rail:54px}
+  .rail{height:100dvh;position:sticky;top:0}
+  .main{min-height:100dvh;height:auto;display:flex;flex-direction:column}
+  .topbar{height:83px;flex:none}
+  .workarea{flex:1 0 auto;display:flex;flex-direction:column;gap:20px;padding:20px 12px 26px}
+  .left-pane{overflow:visible;padding-right:0;border-right:0}
+  .right-pane{overflow:visible;border-top:1px solid var(--line);padding:17px 0 0}
+  .field{grid-template-columns:79px minmax(0,1fr);gap:9px}
+  .grid-two{column-gap:10px}
+  .form-group{margin-bottom:17px}
+  .actionbar{min-height:66px;bottom:0;gap:8px;padding:10px 7px}
+  .actionbar .outline-btn{font-size:11px;min-height:41px;padding:9px 11px}
+  #catalog-overlay{padding:14px 9px}
+  .dialog{width:100%;max-height:calc(100dvh - 28px)}
+}
+@media(max-width:420px){.grid-two{grid-template-columns:1fr}.brand{font-size:20px}.field{grid-template-columns:75px minmax(0,1fr)}}
+
+/* Keep document scrolling as a single window scrollport. */
+html,body{overflow-x:clip;overflow-y:visible}
+@media(max-width:720px){html,body{overflow-x:clip;overflow-y:visible}}
+/* Footer fixed at viewport baseline even with long dependency lists. */
+.main{padding-bottom:79px}
+.actionbar{position:fixed;bottom:0;left:10vw;width:80vw;min-height:79px;z-index:12}
+@media(max-width:720px){.main{padding-bottom:66px}.actionbar{position:fixed;left:54px;width:calc(100% - 54px);bottom:0;min-height:66px}}
+
+/* V5 — Spring-inspired typography and authentic Express brand mark.
+   Asset source: https://expressjs.com/en/resources/community/ .
+   The official Express logo is loaded via HTTPS; the branded "e" fallback is visible offline. */
+html,body{font-family:Arial,Helvetica,sans-serif!important;font-size:15px!important;line-height:1.35}
+button,input,select{font-family:inherit}
+.brand{font-family:Arial,Helvetica,sans-serif!important;font-size:32px;font-weight:800;letter-spacing:-1.35px;gap:11px}
+.brand-mark-official{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none;width:44px;height:44px;background:var(--green);border-radius:10px}
+.brand-mark-official img{position:absolute;inset:0;margin:auto;width:29px;height:29px;object-fit:contain;background:var(--green);display:block}
+.official-logo-fallback{color:#fff;font:700 30px/1 Arial,Helvetica,sans-serif;transform:translateY(-1px)}
+.drawer-logo.brand-mark-official{background:#fff;border-radius:10px;color:var(--green);font-size:initial}
+.drawer-logo.brand-mark-official img{background:var(--green);border:3px solid var(--green);border-radius:3px;width:31px;height:31px}
+.drawer-logo .official-logo-fallback{color:var(--green)}
+.drawer-brand{font-family:Arial,Helvetica,sans-serif;font-size:31px}
+.form-title,.section-title{font-size:16px}
+.choice,.field>label,.field>.field-label{font-size:15px}
+.field input:not([type=radio]):not([type=checkbox]){font-size:15px}
+.selected-dep h3{font-size:16px}
+.dep-detail{font-size:15px;line-height:1.45}
+.dep-kind{font-size:11px}
+.empty-state{font-size:15px}
+.outline-btn,.actionbar .outline-btn,.explorer-footer .outline-btn{font-size:14px}
+.catalog-item .name{font-size:16px}
+.catalog-item .sub{font-size:14px;line-height:1.5}
+.search-top input{font-family:Arial,Helvetica,sans-serif;font-size:15px}
+.search-tip{font-size:13px}
+.catalog-custom-label{font-size:13px}
+.menu-link{font-family:Arial,Helvetica,sans-serif}
+.history-content,.aux-dialog{font-size:15px}
+@media(max-width:720px){.brand{font-size:24px}.brand-mark-official{width:34px;height:34px;border-radius:8px}.brand-mark-official img{width:24px;height:24px}.drawer-logo.brand-mark-official{width:34px;height:34px}.drawer-brand{font-size:23px}.actionbar .outline-btn{font-size:12px}}
+@media(max-width:420px){.brand{font-size:21px}.brand-mark-official{width:29px;height:29px;border-radius:7px}.brand-mark-official img{width:21px;height:21px}.form-title,.section-title{font-size:15px}.choice,.field>label,.field>.field-label{font-size:14px}}
+
+
+/* V6 — Visual scale calibrated to Spring Initializr reference; Poppins via Google Fonts. */
+:root{--ui-font:'Poppins',Arial,Helvetica,sans-serif}
+html,body{font-family:var(--ui-font)!important;font-size:14.5px!important;line-height:1.4}
+button,input,select,textarea{font-family:var(--ui-font)!important}
+.topbar{height:116px}
+.brand{font-family:var(--ui-font)!important;font-size:32px;font-weight:700;letter-spacing:-1.45px;gap:11px}
+.brand-name,.brand-extra{font-weight:700}
+.workarea{padding-top:35px;padding-bottom:51px}
+.grid-two{column-gap:22px}
+.form-group{margin:4px 0 20px}
+.form-title,.section-title{font-size:15.2px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.section-title{margin-top:3px;margin-bottom:12px}
+.choice-row{gap:7px 16px}
+.choice,.field>label,.field>.field-label{font-size:14px;line-height:1.5;font-weight:400}
+.choice{gap:7px;min-height:24px}
+.choice input[type=radio]{width:15px;height:15px}
+.tag-hint{font-size:11px}
+.metadata{max-width:calc(100% - 20px)}
+.field{grid-template-columns:104px minmax(0,1fr);gap:13px;min-height:35px;margin-bottom:9px}
+.field.settings-field{margin-bottom:9px}
+.field input:not([type=radio]):not([type=checkbox]){height:36px;font-size:14px;padding:5px 1px 5px;border-bottom-width:3px}
+.field .choice-row{gap:7px 17px}
+.dependencies-head{min-height:50px;padding-bottom:7px}
+.dependencies-head .section-title{margin:0}
+.outline-btn,.actionbar .outline-btn,.explorer-footer .outline-btn{font-family:var(--ui-font)!important;font-size:13px;font-weight:700;letter-spacing:-.15px}
+.outline-btn{min-height:40px;padding:10px 16px}
+.actionbar{min-height:80px;gap:14px}
+.actionbar .outline-btn{min-height:45px;padding:11px 25px}
+.shortcut{font-weight:400;margin-left:9px}
+.empty-state{font-size:14px;margin-top:18px}
+.selected-dep{padding:15px 0 16px}
+.selected-dep h3{font-size:14.5px;font-weight:700;margin-right:9px}
+.dep-detail{font-size:13.5px;line-height:1.55}
+.dep-kind{font-size:10.5px;font-weight:700;padding:2px 6px}
+.search-top input{font-family:var(--ui-font)!important;font-size:14px}
+.search-tip{font-size:12px}
+.catalog-item .name{font-size:14.5px;font-weight:700}
+.catalog-item .sub{font-size:13px;line-height:1.5}
+.menu-link{font-family:var(--ui-font)!important}
+.drawer-brand{font-family:var(--ui-font)!important;font-size:30px;font-weight:700}
+.aux-dialog,.history-content{font-family:var(--ui-font)!important;font-size:14px}
+@media (min-width:900px) and (max-height:820px){
+  .topbar{height:103px}
+  .workarea{padding-top:23px;padding-bottom:31px}
+  .form-group{margin-bottom:15px}
+  .field{margin-bottom:7px}
+}
+@media (max-width:1050px){
+  .metadata{max-width:100%}
+  .field{grid-template-columns:90px minmax(0,1fr);gap:9px}
+}
+@media (max-width:720px){
+  .topbar{height:83px}
+  .brand{font-size:23px}
+  .workarea{padding:20px 12px 29px}
+  .field{grid-template-columns:80px minmax(0,1fr);gap:8px}
+  .actionbar{min-height:66px}
+  .actionbar .outline-btn{font-size:11px;padding:9px 11px}
+  .form-group{margin-bottom:16px}
+  .choice,.field>label,.field>.field-label{font-size:13px}
+}
+@media (max-width:420px){
+  .brand{font-size:20px}
+  .field{grid-template-columns:76px minmax(0,1fr)}
+  .form-title,.section-title{font-size:14px}
+  .choice,.field>label,.field>.field-label{font-size:12.5px}
+}
+
+
+/* V7: real SVG icon set + forced readable type scale.  All Sass below is compiled to plain CSS. */
+:root{--ui-font:'Poppins',system-ui,Arial,sans-serif}
+html,body{font-family:var(--ui-font)!important;font-size:16px!important;line-height:1.5}
+button,input,select,textarea{font-family:var(--ui-font)!important}
+/* Bigger header, slightly more breathing room across all columns. */
+.topbar{height:124px;padding-top:27px}
+.brand{font-size:35px!important;letter-spacing:-1.25px;gap:13px}
+.brand-mark-official{width:47px;height:47px}
+.brand-mark-official img{width:32px;height:32px}
+.brand .official-logo-fallback{font-size:33px}
+.workarea{padding:36px 34px 62px}
+.left-pane{padding-right:35px}
+.right-pane{padding-left:35px}
+.grid-two{column-gap:23px}
+.form-group{margin:4px 0 25px}
+.form-title,.section-title{font-size:17px;line-height:1.4;font-weight:700;margin-bottom:11px}
+.section-title{margin-top:5px;margin-bottom:15px}
+.choice-row{gap:9px 18px}
+.choice,.field>label,.field>.field-label{font-size:16px;line-height:1.55}
+.choice{min-height:29px;gap:9px}
+.choice input[type=radio]{width:17px;height:17px;border-width:2px}
+.tag-hint{font-size:12px}
+.metadata{max-width:100%}
+.field{grid-template-columns:113px minmax(0,1fr);gap:16px;min-height:40px;margin-bottom:12px}
+.field.settings-field{margin-bottom:13px}
+.field input:not([type=radio]):not([type=checkbox]){height:41px;font-size:16px;padding:7px 2px 6px}
+.field .choice-row{gap:8px 19px}
+.dependencies-head{min-height:55px;padding-bottom:9px}
+.empty-state{font-size:15.5px;margin-top:19px}
+.selected-dep{padding:18px 0 19px;position:relative;min-height:82px}
+.selected-dep h3{font-size:16px;line-height:1.5;font-weight:700}
+.dep-detail{font-size:15px;line-height:1.55;margin-top:4px}
+.dep-kind{font-size:11px;padding:3px 6px}
+.warning-box{font-size:13px;line-height:1.6}
+.outline-btn,.actionbar .outline-btn,.explorer-footer .outline-btn{font-size:15px;letter-spacing:-.08px;font-weight:700;min-height:44px;padding:11px 18px}
+.actionbar{min-height:85px;gap:15px}
+.actionbar .outline-btn{min-height:49px;padding:11px 23px}
+.shortcut{font-size:14px;margin-left:10px;letter-spacing:0}
+.main{padding-bottom:85px}
+.dialog{width:min(755px,calc(100vw - 36px));max-height:calc(100dvh - 76px)}
+#catalog-overlay{padding:38px 18px 20px}
+.search-top{min-height:52px;padding:0 14px}
+.search-top input{height:51px;font-size:16px}
+.search-tip{font-size:13px}
+.catalog-heading{height:42px;padding:11px 13px 9px}
+.catalog-item{min-height:76px;padding:13px 14px}
+.catalog-copy{gap:6px}
+.catalog-item .name{font-size:16px;font-weight:700}
+.catalog-item .sub{font-size:14.5px;line-height:1.5}
+.catalog-custom-label{font-size:13px}
+.drawer-brand{font-size:34px}
+.menu-link{font-size:30px}
+.aux-dialog,.history-content{font-size:15px}
+.history-entry .history-text strong{font-size:16px}
+.history-entry .history-text span{font-size:14px}
+.history-date{font-size:15px}
+/* Hamburger: translated from the provided Sass source. */
+.hamburger{padding:8px 5px;display:inline-block;cursor:pointer;transition:opacity .15s linear,filter .15s linear;font:inherit;color:inherit;text-transform:none;background:transparent;border:0;margin:0;overflow:visible}
+.hamburger:hover{opacity:.8}
+.hamburger-box{width:36px;height:29px;display:inline-block;position:relative}
+.hamburger-inner{display:block;top:50%;margin-top:-2px}
+.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after{width:36px;height:4px;background-color:currentColor;border-radius:1px;position:absolute;left:0;transition:transform .15s ease}
+.hamburger-inner::before,.hamburger-inner::after{content:'';display:block}
+.hamburger-inner::before{top:-11px}
+.hamburger-inner::after{bottom:-11px}
+.hamburger.is-active .hamburger-inner{transform:rotate(45deg)}
+.hamburger.is-active .hamburger-inner::before{transform:translateY(11px);opacity:0}
+.hamburger.is-active .hamburger-inner::after{transform:translateY(-11px) rotate(-90deg)}
+.rail #menu-button,.explorer-rail #explorer-home{display:grid;place-items:center}
+.rail #menu-button .hamburger-box{width:36px;height:29px}
+.rail #menu-button .hamburger-inner,.rail #menu-button .hamburger-inner::before,.rail #menu-button .hamburger-inner::after{width:36px}
+.rail #history-button svg.icon-history{width:27px;height:28px;stroke:none;fill:currentColor}
+.explorer-rail #explorer-home .hamburger-box{width:36px;height:29px}
+/* Font Awesome SVG shapes from the supplied icon paths */
+.theme-switch svg.icon-sun,.theme-switch svg.icon-moon{width:22px;height:22px;stroke:none!important;fill:currentColor!important}
+.theme-switch svg.icon-sun path,.theme-switch svg.icon-moon path{fill:currentColor!important;stroke:none!important}
+.remove-dep{width:38px;height:38px;opacity:0;visibility:hidden;transition:opacity .13s ease,transform .13s ease;transform:translateX(3px);pointer-events:none;color:#dc554d}
+.selected-dep:hover .remove-dep,.selected-dep:focus-within .remove-dep{opacity:1;visibility:visible;transform:translateX(0);pointer-events:auto}
+.remove-dep svg.icon-remove{width:26px;height:26px;display:block;overflow:visible}
+.icon-remove .st0{fill:var(--danger);stroke:none}
+.icon-remove .st1{fill:none;stroke:var(--background);stroke-width:35;stroke-linecap:round}
+.remove-dep:hover{transform:scale(1.12)!important}
+.explorer-tree .tree-arrow{width:15px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.explorer-tree .tree-arrow svg.icon-caret-down{width:9px;height:15px;fill:currentColor;display:block;transform:rotate(-90deg);transition:transform .15s ease}
+.explorer-tree .tree-arrow.expanded svg.icon-caret-down{transform:rotate(0deg)}
+.explorer-tree .tree-arrow:empty{width:15px}
+.explorer-tree button{font-size:14px;min-height:35px;gap:9px}
+.explorer-tree-heading{font-size:16px;padding:15px 16px}
+.explorer-tools .outline-btn{font-size:13px;min-height:36px}
+.explorer-code{font-size:13px;line-height:1.8}
+/* Preserve a natural, single document scrollbar as selected dependencies grow. */
+.right-pane,.left-pane{overflow:visible}
+@media(hover:none){.remove-dep{opacity:1;visibility:visible;transform:none;pointer-events:auto}}
+@media(min-width:900px) and (max-height:820px){
+ .topbar{height:103px;padding-top:18px}
+ .workarea{padding-top:24px;padding-bottom:44px}
+ .form-group{margin-bottom:18px}
+ .field{margin-bottom:9px}
+ .section-title{margin-bottom:11px}
+}
+@media(max-width:1050px){
+ .workarea{padding-left:20px;padding-right:20px}
+ .left-pane{padding-right:18px}.right-pane{padding-left:18px}
+ .grid-two{column-gap:12px}
+ .field{grid-template-columns:99px minmax(0,1fr);gap:10px}
+ .choice-row{gap:8px 12px}
+ .brand{font-size:28px!important}
+}
+@media(max-width:720px){
+ .topbar{height:86px;padding-top:18px}
+ .brand{font-size:24px!important;gap:8px}
+ .brand-mark-official{width:34px;height:34px}
+ .brand-mark-official img{width:24px;height:24px}
+ .workarea{padding:21px 13px 45px}
+ .left-pane{padding-right:0}.right-pane{padding-left:0}
+ .form-group{margin-bottom:19px}
+ .field{grid-template-columns:93px minmax(0,1fr);gap:9px;margin-bottom:11px}
+ .choice,.field>label,.field>.field-label{font-size:14px}
+ .form-title,.section-title{font-size:16px}
+ .field input:not([type=radio]):not([type=checkbox]){font-size:15px;height:39px}
+ .actionbar{min-height:72px}
+ .main{padding-bottom:72px}
+ .actionbar .outline-btn{font-size:12px;padding:10px 11px;min-height:45px}
+ .actionbar .shortcut{font-size:10px;margin-left:4px}
+ .dialog{width:100%;max-height:calc(100dvh - 26px)}
+ #catalog-overlay{padding:13px 9px}
+ .catalog-item .name{font-size:15px}
+ .catalog-item .sub{font-size:13px}
+ .search-tip{font-size:10px}
+ .explorer-tree button{font-size:12px}
+}
+@media(max-width:420px){
+ .brand{font-size:20px!important}
+ .form-title,.section-title{font-size:15px}
+ .field{grid-template-columns:83px minmax(0,1fr);gap:8px}
+ .choice,.field>label,.field>.field-label{font-size:13.5px}
+ .choice-row{gap:8px 12px}
+ .rail #menu-button .hamburger-box{transform:scale(.82)}
+}
+
+
+/* V8 — minimalist Node initializer and alignment with Spring's sticky form. */
+:root{--ui-font:'Poppins',Arial,Helvetica,sans-serif}
+html,body{font-family:var(--ui-font)!important}
+.workarea{position:relative;align-items:stretch;min-height:calc(100dvh - 210px);padding-bottom:60px}
+.workarea::before{content:'';position:absolute;top:32px;bottom:0;left:50%;border-left:1px solid var(--line);pointer-events:none}
+.left-pane{position:sticky;top:22px;align-self:start;border:0;padding-right:34px;max-height:calc(100dvh - 115px);overflow:visible}
+.right-pane{border:0;padding-left:34px;min-width:0}
+.intro-grid .form-group:first-child{min-width:0}
+.intro-grid .choice-row{gap:10px 13px;flex-wrap:wrap}
+.form-group{margin:5px 0 26px}
+.metadata{padding-top:0}
+.field{grid-template-columns:113px minmax(0,1fr)}
+/* Remove focus rings and green focus borders for all clickable UI controls. */
+:where(button,input,a,textarea,select):focus,
+:where(button,input,a,textarea,select):focus-visible,
+:where(.outline-btn,.choice,.catalog-item,.selected-dep):focus-within{outline:none!important;box-shadow:none!important;outline-offset:0!important}
+.field input:not([type=radio]):not([type=checkbox]):focus,
+.field input:not([type=radio]):not([type=checkbox]):focus-visible{border-bottom-color:var(--text)!important}
+.field.invalid input:not([type=radio]):not([type=checkbox]){border-bottom-color:var(--danger)!important}
+/* Make the bottom action bar visibly taller than the V7 version. */
+.actionbar{min-height:104px;gap:18px;padding:16px 12px}
+.actionbar .outline-btn{font-size:16px;min-height:55px;padding:14px 27px}
+.actionbar .shortcut{font-size:14px}
+.main{padding-bottom:104px}
+.explorer-footer{min-height:104px;gap:16px}
+.explorer-footer .outline-btn{font-size:16px;min-height:55px;padding:14px 26px}
+.explorer-main{grid-template-rows:minmax(0,1fr) 104px}
+/* Selection backgrounds stay in the catalog until click closes or Ctrl is held. */
+@media(max-width:1050px){.left-pane{padding-right:16px}.right-pane{padding-left:16px}.intro-grid .choice-row{gap:8px 12px}}
+@media(max-width:720px){
+ .workarea{min-height:0}
+ .workarea::before{display:none}
+ .left-pane{position:static;max-height:none;padding-right:0}
+ .right-pane{padding-left:0}
+ .actionbar{min-height:84px;padding:12px 8px;gap:9px}
+ .actionbar .outline-btn{font-size:12px;min-height:49px;padding:10px 13px}
+ .main{padding-bottom:84px}
+ .explorer-footer{min-height:76px}
+ .explorer-main{grid-template-rows:minmax(0,1fr) 76px}
+ .explorer-footer .outline-btn{font-size:12px;min-height:44px;padding:9px 12px}
+}
+@media(max-width:420px){.intro-grid{grid-template-columns:1fr}.form-group{margin-bottom:16px}.actionbar .shortcut{font-size:10px}}
+
+/* V9: three-language interface, top-centered animated history and Node visual identity. */
+:root{--ui-font:'Poppins',Arial,sans-serif}
+html,body,button,input,select{font-family:var(--ui-font)!important;font-weight:400}
+.brand,.drawer-brand{font-weight:600!important;letter-spacing:-1px!important}
+.brand-name,.brand-extra{font-weight:600!important}
+.brand-node{display:grid;place-items:center;width:46px;height:46px;flex:none;background:none!important;border-radius:0;overflow:visible}
+.brand-node svg{width:45px;height:45px;display:block}
+.drawer-logo.brand-node{background:none!important;width:45px;height:45px;display:grid;place-items:center}
+.drawer-logo.brand-node svg{width:43px;height:43px}
+.top-controls,.explorer-top-controls{display:flex;align-items:flex-start;gap:9px}
+.language-picker{display:inline-flex;align-items:center;gap:5px;min-height:37px;padding:5px 7px;border:1px solid var(--line);background:var(--background);color:var(--text);white-space:nowrap}
+.language-picker svg{width:17px;height:17px}
+.language-picker select{border:0;background:var(--background);color:var(--text);font-size:12px;max-width:91px;padding:0 2px;cursor:pointer;outline:0!important}
+.top-controls{right:-84px;top:17px}
+.explorer-top-controls{top:15px}
+@media(max-width:1100px){.top-controls{right:0;top:12px}.language-picker select{max-width:69px;font-size:11px}.brand{max-width:65%}}
+/* History modal always enters from the upper center, with smooth acceleration and deceleration */
+#history-overlay{align-items:flex-start;justify-content:center;padding-top:min(9vh,75px)}
+#history-overlay .history-dialog{margin:0;max-height:calc(100dvh - 110px);width:min(955px,calc(100vw - 36px));transform-origin:top center;animation:historyIn .42s cubic-bezier(.26,.76,.22,1) both}
+#history-overlay.is-exiting .history-dialog{animation:historyOut .34s cubic-bezier(.65,0,.7,.3) both}
+#history-overlay.is-entering{animation:fadeBackdrop .32s ease-out both}
+#history-overlay.is-exiting{animation:fadeBackdropOut .36s ease-in both;pointer-events:none}
+@keyframes historyIn{from{opacity:0;transform:translateY(-26px) scale(.985)}65%{opacity:1}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes historyOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-22px)}}
+@keyframes fadeBackdrop{from{opacity:0}to{opacity:1}}
+@keyframes fadeBackdropOut{from{opacity:1}to{opacity:0}}
+/* Explicitly only three history actions; click project name to restore */
+.history-entry button.history-restore{width:auto!important;height:auto!important;flex:1 1 auto!important;min-width:0;max-width:100%;padding:0 4px!important;white-space:normal}
+.history-entry .history-text span{overflow-wrap:anywhere}
+
+.history-actions{display:flex;gap:13px;align-items:center;flex:none}
+.history-actions button{width:30px;height:32px}
+.history-entry .history-restore{background:none;border:0;text-align:left;color:inherit;cursor:pointer;min-width:0;flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:0;line-height:1.4}
+.history-entry .history-restore:hover strong{text-decoration:underline}
+.history-date{text-transform:none;font-weight:600}
+/* Sliding full-screen menu, green background, transparent overlay */
+#drawer-overlay{padding:0}
+#drawer-overlay.is-entering .drawer{animation:drawerIn .44s cubic-bezier(.18,.72,.22,1) both}
+#drawer-overlay.is-exiting .drawer{animation:drawerOut .34s cubic-bezier(.54,.02,.82,.36) both}
+#drawer-overlay.is-exiting{pointer-events:none}
+@keyframes drawerIn{from{transform:translateY(-100%);opacity:.85}to{transform:translateY(0);opacity:1}}
+@keyframes drawerOut{from{transform:translateY(0);opacity:1}to{transform:translateY(100%);opacity:.92}}
+.drawer-close.hamburger{top:26px;z-index:5;left:calc(10vw - 55px);width:43px;height:43px}
+.drawer-close .hamburger-inner,.drawer-close .hamburger-inner::before,.drawer-close .hamburger-inner::after{background-color:#101010}
+.drawer-inner{display:flex;flex-direction:column;gap:0;overflow-y:auto;height:100%;padding-bottom:34px}
+.drawer-inner nav{gap:12px;align-items:flex-start}
+.menu-link{font-family:var(--ui-font)!important;font-size:clamp(20px,2.1vw,29px);font-weight:600!important}
+.menu-promo{margin-top:20px;display:flex;flex-direction:column;gap:6px;color:#fff;font-size:clamp(12px,1.25vw,16px)}
+.menu-promo h2{font-size:clamp(21px,2.1vw,30px);font-weight:600;margin:0 0 4px;color:white}
+.menu-promo p{margin:0}
+.menu-promo a{color:#fff;text-decoration:none;width:fit-content}
+.menu-promo a:hover{text-decoration:underline}
+.promo-caption{text-transform:uppercase;font-size:12px;letter-spacing:1.5px;opacity:.9}
+.drawer-github{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;color:white;padding-top:18px}
+.drawer-github svg{width:29px;height:29px}
+/* Avoid invisible language selector in narrower explorer */
+.explorer-top-controls .language-picker{margin-right:0}
+@media(max-width:720px){
+ .topbar{padding-top:18px}.top-controls{right:0;top:13px;gap:4px}.theme-switch{width:30px;height:59px}.theme-switch button{height:27px}
+ .language-picker{min-height:30px;padding:3px 4px;gap:2px}.language-picker svg{width:14px;height:14px}.language-picker select{font-size:10px;max-width:65px}
+ .brand-node,.brand-node svg{width:35px;height:35px}
+ #history-overlay{padding:28px 10px 10px}.drawer-close.hamburger{left:12px;top:18px}.drawer-inner{margin-left:54px;padding:20px 18px;width:calc(100% - 54px)}
+ .drawer-brand{font-size:23px;margin-bottom:30px}.menu-link{font-size:22px}
+ .history-actions{gap:3px}.history-actions button{width:25px}.history-entry .history-restore{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){#history-overlay .history-dialog,#history-overlay.is-exiting .history-dialog,#drawer-overlay.is-entering .drawer,#drawer-overlay.is-exiting .drawer{animation:none!important}}
+
+/* V10 — polished Node Initializr identity, anchored links, background scroll locking */
+.brand-node svg{color:var(--green);display:block;width:100%;height:100%}
+.drawer-logo.brand-node svg{color:#fff}
+.brand-node{width:46px;height:46px;overflow:visible}
+.drawer-logo.brand-node{width:45px;height:45px}
+.top-controls .language-picker,.explorer-top-controls .language-picker{margin-right:14px}
+/* Lock both document scroll containers while any fullscreen panel is shown. */
+html:has(body.modal-open){overflow:hidden!important;overscroll-behavior:none}
+body.modal-open{overflow:hidden!important;overscroll-behavior:none}
+#drawer-overlay{overflow:hidden;overscroll-behavior:none}
+#catalog-overlay{overscroll-behavior:contain}
+#drawer-overlay.is-exiting .drawer{animation:drawerOutUp .36s cubic-bezier(.53,.03,.83,.33) both}
+@keyframes drawerOutUp{from{transform:translateY(0);opacity:1}to{transform:translateY(-100%);opacity:.97}}
+.drawer-inner{overflow-y:auto;scrollbar-width:none}
+.drawer-inner::-webkit-scrollbar{display:none}
+/* GitHub uses the exact same bottom-left rail location on all views. */
+.drawer-github{position:absolute;left:calc(10vw - 62px);bottom:17px;margin:0;padding:0;width:40px;height:40px;display:grid;place-items:center;align-self:auto;z-index:8}
+.drawer-github svg{width:27px;height:27px}
+.drawer-github:hover{opacity:.8}
+@media(max-width:1100px){.drawer-github{left:14px}}
+@media(max-width:720px){.top-controls .language-picker,.explorer-top-controls .language-picker{margin-right:6px}.drawer-github{left:7px;bottom:13px}}
+@media(prefers-reduced-motion:reduce){#drawer-overlay.is-exiting .drawer{animation:none!important}}
+
+/* V11 — unified page scroll and exact grid alignment, no phantom scrollbar. */
+html{height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:thin;scrollbar-color:#aab4b6 var(--background)}
+body{height:auto!important;min-height:100dvh!important;overflow:visible!important;overscroll-behavior-x:none}
+html:has(body.modal-open),html:has(body.modal-open) body{overflow:hidden!important}
+.shell{width:90%!important;min-height:100dvh!important;height:auto!important;overflow:visible!important;align-items:stretch}
+.rail{position:sticky!important;top:0;align-self:start;height:100dvh!important}
+.main{height:auto!important;min-height:100dvh!important;display:flex!important;flex-direction:column;padding-bottom:0!important;overflow:visible!important}
+.topbar{flex:none}
+.workarea{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;flex:1 0 auto!important;align-items:start!important;min-height:0!important;padding:27px 30px 38px!important;gap:0!important}
+.workarea::before{content:'';display:block;position:absolute;top:0;bottom:0;left:50%;border-left:1px solid var(--line);pointer-events:none}
+.left-pane{position:sticky!important;top:24px;align-self:start;max-height:none!important;padding-right:33px!important;overflow:visible!important;min-width:0}
+.right-pane{padding-left:33px!important;overflow:visible!important;min-width:0;min-height:0}
+.actionbar{position:sticky!important;left:auto!important;bottom:0!important;width:100%!important;min-height:88px!important;flex-shrink:0!important;margin-top:auto!important;padding:12px!important;z-index:12;gap:15px}
+.actionbar .outline-btn{min-height:50px!important;padding:12px 22px!important;font-size:14px!important;line-height:1.25!important}
+.actionbar .shortcut{font-size:12px!important}
+.packaging-field{margin-top:17px!important}.packaging-field .field-choice{display:flex;flex-wrap:wrap;gap:9px 16px}.packaging-field .choice{font-size:13.5px}
+/* Explorer: crisp, legible buttons and adequate distance from theme/language controls. */
+.explorer-main{grid-template-rows:minmax(0,1fr) 88px!important}
+.explorer-layout{min-width:0;min-height:0}
+.explorer-editor{grid-template-rows:62px minmax(0,1fr)!important}
+.explorer-tools{display:flex!important;justify-content:center!important;align-items:center!important;gap:14px!important;min-height:62px;padding:6px 200px 6px 0!important}
+.explorer-tools .outline-btn{font-family:var(--ui-font)!important;min-height:44px!important;padding:10px 17px!important;font-size:14px!important;font-weight:600!important;line-height:1.35!important;letter-spacing:0!important;white-space:nowrap;text-rendering:optimizeLegibility}
+.explorer-top-controls{right:18px!important;top:15px!important;display:flex!important;gap:8px!important;align-items:flex-start!important}
+.explorer-top-controls .language-picker{margin-right:0!important;min-height:40px}
+.explorer-footer{min-height:88px!important;gap:16px!important}
+.explorer-footer .outline-btn{min-height:48px!important;padding:11px 20px!important;font-size:14px!important;font-weight:600!important;line-height:1.35!important;letter-spacing:0!important}
+.explorer-code-scroll{scrollbar-color:#aab4b6 var(--background)}
+@media(max-width:1100px){.workarea{padding:24px 20px 36px!important}.left-pane{padding-right:18px!important}.right-pane{padding-left:18px!important}.explorer-tools{padding-right:135px!important}}
+@media(max-width:720px){
+ html,body{overflow-x:hidden!important}
+ .shell{width:100%!important;min-height:100dvh!important}
+ .main{min-height:100dvh!important}
+ .workarea{display:flex!important;flex-direction:column!important;gap:19px!important;padding:20px 13px 24px!important}
+ .workarea::before{display:none!important}
+ .left-pane{position:static!important;max-height:none!important;padding-right:0!important;width:100%}
+ .right-pane{padding:18px 0 0!important;border-top:1px solid var(--line);width:100%}
+ .actionbar{min-height:76px!important;padding:9px 6px!important;gap:8px!important}
+ .actionbar .outline-btn{font-size:12px!important;padding:10px 12px!important;min-height:47px!important}
+ .actionbar .shortcut{font-size:10px!important}
+ .packaging-field .field-choice{gap:7px 11px}.packaging-field .choice{font-size:12px}
+ .explorer-main{grid-template-rows:minmax(0,1fr) 72px!important}
+ .explorer-top-controls{right:8px!important;top:9px!important;gap:5px!important}
+ .explorer-tools{justify-content:flex-start!important;padding:7px 0!important;gap:8px!important}
+ .explorer-tools .outline-btn{font-size:11px!important;padding:8px 10px!important;min-height:36px!important}
+ .explorer-editor{grid-template-rows:52px minmax(0,1fr)!important}
+ .explorer-footer{min-height:72px!important;gap:10px!important}
+ .explorer-footer .outline-btn{font-size:11px!important;min-height:42px!important;padding:9px 11px!important}
+}
+@media(max-width:420px){.packaging-field .choice{font-size:11.5px}.explorer-top-controls .language-picker{display:none}}
+
+/* V12 — animaciones puntuales, sin modificar el diseño ni el generador. */
+/* El buscador aparece suavemente y se retira antes de ocultarse. */
+@keyframes catalogBackdropIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes catalogBackdropOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes catalogDialogIn { from { opacity: 0; transform: translate3d(0,-22px,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
+@keyframes catalogDialogOut { from { opacity: 1; transform: translate3d(0,0,0); } to { opacity: 0; transform: translate3d(0,-16px,0); } }
+#catalog-overlay.is-entering { animation: catalogBackdropIn 290ms ease-out both; }
+#catalog-overlay.is-entering #catalog-dialog { animation: catalogDialogIn 300ms cubic-bezier(.2,.7,.2,1) both; }
+#catalog-overlay.is-exiting { animation: catalogBackdropOut 290ms ease-in both; pointer-events: none; }
+#catalog-overlay.is-exiting #catalog-dialog { animation: catalogDialogOut 290ms cubic-bezier(.5,0,.8,.4) both; }
+/* Explorer: el menú lateral y los controles de tema quedan estáticos;
+   solo el explorador de archivos/editor y su footer suben/bajan. */
+.explorer-overlay,
+.explorer-overlay.hidden,
+.explorer-overlay.is-open {
+  transform: none !important;
+  will-change: auto;
+  transition: none !important;
+}
+.explorer-overlay:not(.hidden) { visibility: visible; pointer-events: auto; }
+.explorer-overlay.hidden { visibility: hidden; pointer-events: none; }
+.explorer-overlay { overflow: hidden; }
+.explorer-layout,
+.explorer-footer {
+  transform: translate3d(0,100dvh,0);
+  transition: transform 340ms cubic-bezier(.2,.7,.22,1);
+  will-change: transform;
+}
+.explorer-overlay.is-open .explorer-layout,
+.explorer-overlay.is-open .explorer-footer { transform: translate3d(0,0,0); }
+@media (prefers-reduced-motion: reduce) {
+  #catalog-overlay.is-entering, #catalog-overlay.is-entering #catalog-dialog,
+  #catalog-overlay.is-exiting, #catalog-overlay.is-exiting #catalog-dialog { animation: none !important; }
+  .explorer-layout, .explorer-footer { transition: none !important; }
+}
+
+
+/* V13 — Cirugía visual: footer, rail, draft efímero y chrome persistente */
+:root{--footer-height:104px}
+/* La barra lateral queda inmóvil incluso cuando el documento hace scroll. */
+.shell{display:block!important;grid-template-columns:none!important;padding-left:var(--rail)!important;width:90%!important}
+.rail{position:fixed!important;top:0!important;left:0!important;width:var(--rail)!important;height:100dvh!important;align-self:auto!important;z-index:61!important;background:var(--background);padding-bottom:17px!important}
+.rail .rail-bottom{margin-top:auto!important;position:relative!important;bottom:auto!important;flex-shrink:0}
+/* Menú y modales comunes deben cubrir también la barra lateral y las opciones. */
+.overlay:not(.explorer-overlay){z-index:100!important}
+/* Barra única y siempre visible: mismo sitio en inicio y Explorer. */
+.top-controls{position:fixed!important;top:16px!important;right:calc(10vw - 49px)!important;z-index:71!important;display:flex!important;flex-direction:column-reverse!important;gap:0!important;align-items:center!important;width:38px!important;margin:0!important}
+.top-controls .theme-switch{width:36px!important;height:66px!important;flex-shrink:0}
+.top-controls .language-picker{width:36px!important;height:35px!important;min-height:35px!important;display:grid!important;place-items:center!important;border:2px solid var(--text)!important;border-top:0!important;border-radius:0 0 3px 3px!important;position:relative!important;background:var(--background)!important;margin:0!important;padding:2px!important;cursor:pointer}
+.top-controls .language-picker svg{display:block;width:21px!important;height:21px!important;pointer-events:none}
+.top-controls .language-picker select{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;opacity:0!important;cursor:pointer!important;max-width:none!important;min-width:0!important;font-size:16px!important;margin:0!important;padding:0!important}
+.top-controls .language-picker:hover{background:var(--hover)!important}
+/* Primero el selector de tema, después el globo. */
+.top-controls{flex-direction:column-reverse!important}
+/* Explorer es exclusivamente el contenido central. No replica sidebar ni controles del extremo derecho. */
+.explorer-overlay{inset:0 auto 0 var(--rail)!important;width:calc(90vw - var(--rail))!important;max-width:none!important;z-index:40!important;background:var(--background)!important;border-right:1px solid var(--line)!important;overflow:hidden!important}
+.explorer-shell{display:block!important;width:100%!important;height:100dvh!important;border-right:0!important}
+.explorer-rail,.explorer-top-controls{display:none!important}
+.explorer-main{height:100dvh!important;min-height:0!important;width:100%!important;background:var(--background)!important;grid-template-rows:minmax(0,1fr) var(--footer-height)!important}
+.explorer-layout{background:var(--background)!important}
+.explorer-code-scroll{background:var(--background)!important}
+.explorer-footer{height:var(--footer-height)!important;min-height:var(--footer-height)!important;gap:17px!important;padding:13px 12px!important}
+.explorer-footer .outline-btn{height:57px!important;min-height:57px!important;padding:14px 22px!important;font-size:15px!important;line-height:1.15!important}
+/* Footer y botones un poco más grandes sin afectar el scroll global. */
+.actionbar{min-height:var(--footer-height)!important;height:var(--footer-height)!important;padding:13px 12px!important;gap:17px!important;z-index:12!important}
+.actionbar .outline-btn{min-height:57px!important;height:57px!important;padding:14px 24px!important;font-size:15px!important;line-height:1.15!important}
+.actionbar .shortcut,.explorer-footer .shortcut{font-size:12px!important}
+/* La cabecera Explorer gana aire sin mover el control fijo de idioma/tema. */
+.explorer-editor{grid-template-rows:66px minmax(0,1fr)!important}
+.explorer-tools{min-height:66px!important}
+/* En pantalla estrecha, conservar el mismo conjunto de controles sin duplicados. */
+@media(max-width:1100px){.top-controls{right:12px!important}}
+@media(max-width:720px){
+ .shell{width:100%!important}
+ .top-controls{top:10px!important;right:8px!important;width:32px!important}
+ .top-controls .theme-switch{width:32px!important;height:59px!important}
+ .top-controls .language-picker{width:32px!important;height:31px!important;min-height:31px!important}
+ .top-controls .language-picker svg{width:18px!important;height:18px!important}
+ .actionbar{--footer-height:88px;min-height:88px!important;height:88px!important;padding:10px 5px!important;gap:9px!important}
+ .actionbar .outline-btn{min-height:52px!important;height:52px!important;padding:10px 12px!important;font-size:12px!important}
+ .explorer-overlay{width:calc(100vw - var(--rail))!important}
+ .explorer-main{--footer-height:88px;grid-template-rows:minmax(0,1fr) 88px!important}
+ .explorer-footer{min-height:88px!important;height:88px!important}
+ .explorer-footer .outline-btn{min-height:49px!important;height:49px!important;font-size:12px!important;padding:9px 12px!important}
+}
+
+
+/* V14 - changes limited to animation, chrome placement and language spacing. */
+/* Keep the native controls separate by exactly 5px. */
+.top-controls{gap:5px!important}
+.top-controls .language-picker{
+  border-top:2px solid var(--text)!important;
+  border-radius:3px!important;
+}
+/* Browser scrollbars must not cause a white flash while changing views. */
+.explorer-overlay,
+.explorer-overlay.hidden,
+.explorer-overlay.is-open{
+  background:transparent!important;
+  border-right:0!important;
+  pointer-events:none;
+}
+.explorer-overlay.is-open{pointer-events:auto}
+.explorer-shell{background:transparent!important}
+/* Animate ONE continuous surface: Explorer's center and footer only. */
+.explorer-main{
+  background:var(--background)!important;
+  transform:translate3d(0,105%,0);
+  transition:transform 360ms cubic-bezier(.22,.72,.25,1)!important;
+  will-change:transform;
+  border-right:1px solid var(--line);
+}
+.explorer-overlay.is-open .explorer-main{transform:translate3d(0,0,0)}
+.explorer-layout,.explorer-footer,
+.explorer-overlay.is-open .explorer-layout,
+.explorer-overlay.is-open .explorer-footer{
+  transform:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+/* Main sidebar controls stay in place while the green sheet slides. */
+body.menu-visible .rail{
+  z-index:125!important;
+  background:var(--green)!important;
+  color:#111!important;
+  border-right:1px solid rgba(255,255,255,.18)!important;
+}
+body.menu-visible .rail #menu-button,
+body.menu-visible .rail .rail-bottom{color:#111!important}
+body.menu-visible .rail .github-icon{fill:#fff!important}
+body.menu-visible .rail .rail-rule,
+body.menu-visible .rail #history-button{visibility:hidden!important}
+/* Remove duplicate menu controls: the original hamburger and GitHub are fixed. */
+#drawer-overlay .drawer-close,
+#drawer-overlay .drawer-github{display:none!important}
+/* Only the menu's right-side panel moves, not the sidebar icons. */
+#drawer-overlay .drawer{animation:none!important;transform:none!important}
+#drawer-overlay.is-entering .drawer,
+#drawer-overlay.is-exiting .drawer{animation:none!important}
+#drawer-overlay{background:transparent!important;pointer-events:none}
+#drawer-overlay.is-entering,#drawer-overlay:not(.is-exiting){pointer-events:auto}
+#drawer-overlay .drawer{background:transparent!important}
+#drawer-overlay .drawer-inner{
+  background:var(--green)!important;
+  transform:translate3d(0,-105%,0);
+  transition:transform 440ms cubic-bezier(.18,.72,.22,1)!important;
+  will-change:transform;
+}
+#drawer-overlay.is-entering .drawer-inner{transform:translate3d(0,0,0)}
+#drawer-overlay.is-exiting .drawer-inner{transform:translate3d(0,-105%,0)}
+@media(prefers-reduced-motion:reduce){
+  .explorer-main,#drawer-overlay .drawer-inner{transition:none!important}
+}
+
+/* V15 — One full-width curtain. The rail stays fixed above the same green sheet. */
+#drawer-overlay{
+ position:fixed!important;inset:0!important;width:100vw!important;
+ height:100vh!important;height:100dvh!important;
+ z-index:110!important;display:block!important;padding:0!important;
+ background:var(--green)!important;
+ clip-path:inset(0 0 100% 0);
+ transition:clip-path 440ms cubic-bezier(.42,0,.16,1)!important;
+ pointer-events:none;
+}
+#drawer-overlay.hidden{display:none!important}
+#drawer-overlay.is-entering{
+ clip-path:inset(0 0 0 0)!important;
+ pointer-events:auto;
+}
+#drawer-overlay.is-exiting{
+ clip-path:inset(0 0 100% 0)!important;
+ pointer-events:none;
+}
+#drawer-overlay .drawer{
+ background:var(--green)!important;
+ transform:none!important;animation:none!important;transition:none!important;
+ width:100%!important;height:100%!important;
+}
+#drawer-overlay .drawer-inner,
+#drawer-overlay.is-entering .drawer-inner,
+#drawer-overlay.is-exiting .drawer-inner{
+ background:var(--green)!important;
+ transform:none!important;animation:none!important;transition:none!important;
+ will-change:auto!important;
+}
+/* The rail is transparent so the green sheet covers its area gradually as well. */
+body.menu-visible .rail{
+ background:transparent!important;
+ border-right-color:var(--line)!important;
+}
+body.menu-visible .rail #menu-button,
+body.menu-visible .rail .rail-bottom{color:var(--text)!important}
+body.menu-visible .rail .github-icon{fill:var(--text)!important}
+@media(prefers-reduced-motion:reduce){#drawer-overlay{transition:none!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Node Initializr","alternateName":"Node.js Initializr","description":"Generador gratuito de proyectos Node.js con dependencias, JavaScript o TypeScript, npm, pnpm y yarn. Explora y descarga un proyecto ZIP.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":["es","en","pt"],"creator":{"@type":"Organization","name":"Fábrica Abstracta S.A.C.","email":"markofranchesco@gmail.com"}}</script>
+</head>
+<body>
+<div class="shell">
+<aside aria-label="Navegación lateral" class="rail">
+<button aria-label="Abrir menú" id="menu-button" class="hamburger" aria-expanded="false" title="Menú"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+<div class="rail-rule hidden"></div>
+<button aria-label="Historial" class="hidden" id="history-button" title="Historial"><svg aria-hidden="true" focusable="false" version="1.1" viewBox="0 0 20 21" width="20" role="img" class="icon-history" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor" transform="translate(-464,-254)"><g transform="translate(464,254.5)"><path d="M10.5,0 C7,0 3.9,1.9 2.3,4.8 L0,2.5 L0,9 L6.5,9 L3.7,6.2 C5,3.7 7.5,2 10.5,2 C14.6,2 18,5.4 18,9.5 C18,13.6 14.6,17 10.5,17 C7.2,17 4.5,14.9 3.4,12 L1.3,12 C2.4,16 6.1,19 10.5,19 C15.8,19 20,14.7 20,9.5 C20,4.3 15.7,0 10.5,0 Z M9,5 L9,10.1 L13.7,12.9 L14.5,11.6 L10.5,9.2 L10.5,5 Z"/></g></g></svg></button>
+<a aria-label="GitHub de Marko Franchesco" class="rail-bottom" href="https://github.com/markofranchesco" rel="noopener noreferrer" target="_blank" title="GitHub de Marko Franchesco"><svg aria-hidden="true" class="github-icon" viewbox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.57 22.02c.57.11.77-.25.77-.55v-2.15c-3.14.68-3.8-1.33-3.8-1.33-.51-1.29-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.64 1.22 3.28.93.1-.73.39-1.23.71-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.45-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.01 0 0 .95-.31 3.11 1.17a10.84 10.84 0 0 1 5.67 0c2.16-1.48 3.11-1.17 3.11-1.17.62 1.56.23 2.72.11 3.01a4.4 4.4 0 0 1 1.16 3.05c0 4.35-2.64 5.31-5.16 5.59.4.35.76 1.04.76 2.1v3.12c0 .3.2.66.78.55A11.3 11.3 0 0 0 12 .7Z"></path></svg></a>
+</aside>
+<div class="main">
+<header class="topbar"><a class="brand" href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer" aria-label="Documentación oficial de Node.js"><div class="brand-mark brand-node" aria-hidden="true"><svg class="node-hex" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M28.5 4.2a7 7 0 0 1 7 0L55.8 16a7 7 0 0 1 3.5 6.1v19.8a7 7 0 0 1-3.5 6.1L35.5 59.8a7 7 0 0 1-7 0L8.2 48a7 7 0 0 1-3.5-6.1V22.1a7 7 0 0 1 3.5-6.1Z" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linejoin="round"/><path d="M26.1 21v19.6c0 5.5-3 8.4-8.2 8.4-3.1 0-5.6-1.3-7.1-3.6M47.1 25.7c-2.3-2.9-5.6-4.4-9.5-4.4-4.6 0-7.8 2.6-7.8 6.4 0 9.1 17.7 3.6 17.7 13 0 5.2-4.2 8.3-9.5 8.3-4.3 0-7.5-2-9.6-5.1" fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span><span class="brand-name">node</span><span class="brand-extra"> initializr</span></span></a>
+</header>
+<main class="workarea">
+<section aria-label="Configuración del proyecto" class="left-pane">
+<div class="grid-two intro-grid">
+ <div class="form-group"><h2 class="form-title">Node.js</h2><div class="choice-row"><label class="choice"><input name="nodeVersion" type="radio" value="26"/>26 <span class="tag-hint" data-i18n="current">Current</span></label><label class="choice"><input checked name="nodeVersion" type="radio" value="24"/>24 <span class="tag-hint">LTS</span></label><label class="choice"><input name="nodeVersion" type="radio" value="22"/>22 <span class="tag-hint">LTS</span></label></div></div>
+ <div class="form-group"><h2 class="form-title" data-i18n="language">Language</h2><div class="choice-row"><label class="choice"><input checked name="language" type="radio" value="javascript"/>JavaScript</label><label class="choice"><input name="language" type="radio" value="typescript"/>TypeScript</label></div></div>
+</div>
+<div class="grid-two">
+ <div class="form-group"><h2 class="form-title" data-i18n="module">Module system</h2><div class="choice-row"><label class="choice"><input checked name="module" type="radio" value="esm"/>ESM</label><label class="choice"><input name="module" type="radio" value="cjs"/>CommonJS</label></div></div>
+ <div class="form-group"><h2 class="form-title" data-i18n="manager">Package manager</h2><div class="choice-row"><label class="choice"><input checked name="packageManager" type="radio" value="npm"/>npm</label><label class="choice"><input name="packageManager" type="radio" value="pnpm"/>pnpm</label><label class="choice"><input name="packageManager" type="radio" value="yarn"/>yarn</label></div></div>
+</div>
+<h2 class="section-title" data-i18n="metadata">Project Metadata</h2>
+<div class="metadata">
+ <div class="field" id="field-name"><label for="name" data-i18n="artifact">Artifact</label><input autocomplete="off" id="name" spellcheck="false" value="demo"/><div class="small-hint hidden" id="name-error"></div></div>
+ <div class="field"><label for="description" data-i18n="description">Description</label><input autocomplete="off" id="description" placeholder="My Node.js project"/></div>
+ <div class="field"><label for="version" data-i18n="version">Version</label><input id="version" spellcheck="false" value="0.1.0"/></div>
+<div class="field settings-field packaging-field"><span class="field-label" data-i18n="packaging">Packaging</span><div class="choice-row field-choice">
+<label class="choice"><input checked name="packaging" type="radio" value="none"/><span data-i18n="packNone">None</span></label>
+<label class="choice"><input name="packaging" type="radio" value="docker"/>Docker</label>
+<label class="choice"><input name="packaging" type="radio" value="compose"/>Docker Compose</label>
+</div></div>
+</div>
+</section>
+<section aria-label="Dependencias seleccionadas" class="right-pane">
+<div class="dependencies-head"><h2 class="section-title" data-i18n="dependencies">Dependencies</h2><button class="outline-btn" id="add-dependencies" type="button"><span data-i18n="add">ADD DEPENDENCIES...</span> <span class="shortcut">CTRL + B</span></button></div>
+<div id="selected-list"><p class="empty-state">No dependency selected</p></div><div aria-live="polite" class="selection-note" id="selection-note"></div>
+</section>
+</main>
+<footer class="actionbar"><button class="outline-btn action-primary" id="generate-button" type="button"><span data-i18n="generate">GENERATE</span> <span class="shortcut">CTRL + ↵</span></button><button class="outline-btn" id="explore-button" type="button"><span data-i18n="explore">EXPLORE</span> <span class="shortcut">CTRL + SPACE</span></button></footer>
+</div>
+</div>
+<div class="overlay hidden" id="catalog-overlay" role="presentation"><section aria-label="Agregar dependencias" aria-modal="true" class="dialog" id="catalog-dialog" role="dialog"><div class="search-top"><input aria-label="Buscar dependencia" autocomplete="off" id="dep-search" placeholder="Express, Mongoose, Zod, Joi, Cors, Socket.IO..."/><span class="search-tip" data-i18n="ctrl">Hold Ctrl to select multiple</span><button aria-label="Cerrar" class="search-close" id="close-catalog" title="Cerrar">×</button></div><div class="catalog-list" id="catalog-list"></div></section></div>
+<div class="overlay drawer-overlay hidden" id="drawer-overlay" role="presentation"><aside aria-label="Menú" aria-modal="true" class="drawer" id="drawer-panel" role="dialog"><button aria-label="Close menu" class="drawer-close hamburger is-active" id="close-drawer"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button><div class="drawer-inner"><div class="drawer-brand"><span class="drawer-logo brand-node" aria-hidden="true"><svg class="node-hex" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M28.5 4.2a7 7 0 0 1 7 0L55.8 16a7 7 0 0 1 3.5 6.1v19.8a7 7 0 0 1-3.5 6.1L35.5 59.8a7 7 0 0 1-7 0L8.2 48a7 7 0 0 1-3.5-6.1V22.1a7 7 0 0 1 3.5-6.1Z" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linejoin="round"/><path d="M26.1 21v19.6c0 5.5-3 8.4-8.2 8.4-3.1 0-5.6-1.3-7.1-3.6M47.1 25.7c-2.3-2.9-5.6-4.4-9.5-4.4-4.6 0-7.8 2.6-7.8 6.4 0 9.1 17.7 3.6 17.7 13 0 5.2-4.2 8.3-9.5 8.3-4.3 0-7.5-2-9.6-5.1" fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>node</strong> initializr</span></div><nav aria-label="Main links" id="drawer-content"></nav><a class="drawer-github" href="https://github.com/markofranchesco" target="_blank" rel="noopener noreferrer" aria-label="Marko Franchesco GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.57 22.02c.57.11.77-.25.77-.55v-2.15c-3.14.68-3.8-1.33-3.8-1.33-.51-1.29-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.64 1.22 3.28.93.1-.73.39-1.23.71-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.45-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.01 0 0 .95-.31 3.11 1.17a10.84 10.84 0 0 1 5.67 0c2.16-1.48 3.11-1.17 3.11-1.17.62 1.56.23 2.72.11 3.01a4.4 4.4 0 0 1 1.16 3.05c0 4.35-2.64 5.31-5.16 5.59.4.35.76 1.04.76 2.1v3.12c0 .3.2.66.78.55A11.3 11.3 0 0 0 12 .7Z"/></svg></a></div></aside></div><div class="overlay hidden" id="history-overlay" role="presentation"><section aria-label="Historial" aria-modal="true" class="aux-dialog history-dialog" id="history-dialog" role="dialog"><header class="aux-head"><h2 data-i18n="history">History</h2><button class="outline-btn" id="clear-history" type="button"><span data-i18n="clear">CLEAR</span></button></header><div class="history-content" id="history-content"></div><footer class="aux-footer"><button class="outline-btn" id="close-history" type="button"><span data-i18n="close">CLOSE</span> <span class="shortcut">ESC</span></button></footer></section></div><div aria-live="polite" class="toast hidden" id="toast" role="status"></div>
+
+<div class="top-controls"><label class="language-picker"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><select id="ui-language" aria-label="Interface language"><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option></select></label><div aria-label="Tema de apariencia" class="theme-switch" role="group"><button aria-label="Modo claro" id="theme-light" title="Modo claro" type="button"><svg aria-hidden="true" focusable="false" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-sun"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"/></svg></button><button aria-label="Modo oscuro" id="theme-dark" title="Modo oscuro" type="button"><svg aria-hidden="true" focusable="false" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-moon"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"/></svg></button></div></div>
+<div class="explorer-overlay hidden" id="explorer-overlay" role="presentation">
+<div class="explorer-shell">
+<aside aria-label="Navegación Explorer" class="explorer-rail">
+<button aria-label="Volver al generador" id="explorer-home" class="hamburger" title="Volver al generador" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+<div class="explorer-rail-rule"></div>
+<a aria-label="GitHub de Marko Franchesco" class="explorer-github" href="https://github.com/markofranchesco" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.57 22.02c.57.11.77-.25.77-.55v-2.15c-3.14.68-3.8-1.33-3.8-1.33-.51-1.29-1.25-1.64-1.25-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1.01 1.72 2.64 1.22 3.28.93.1-.73.39-1.23.71-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.45-2.26 1.17-3.05-.12-.29-.51-1.45.11-3.01 0 0 .95-.31 3.11 1.17a10.84 10.84 0 0 1 5.67 0c2.16-1.48 3.11-1.17 3.11-1.17.62 1.56.23 2.72.11 3.01a4.4 4.4 0 0 1 1.16 3.05c0 4.35-2.64 5.31-5.16 5.59.4.35.76 1.04.76 2.1v3.12c0 .3.2.66.78.55A11.3 11.3 0 0 0 12 .7Z"></path></svg></a>
+</aside>
+<div aria-label="Explorer del proyecto" aria-modal="true" class="explorer-main" role="dialog">
+<div class="explorer-top-controls"><label class="language-picker"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><select id="explorer-ui-language" aria-label="Interface language"><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option></select></label><div aria-label="Tema en Explorer" class="theme-switch" role="group"><button aria-label="Modo claro" id="explorer-theme-light" title="Modo claro" type="button"><svg aria-hidden="true" focusable="false" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-sun"><path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"/></svg></button><button aria-label="Modo oscuro" id="explorer-theme-dark" title="Modo oscuro" type="button"><svg aria-hidden="true" focusable="false" data-icon="moon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-moon"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"/></svg></button></div></div>
+<div class="explorer-layout">
+<aside class="explorer-tree-pane"><h2 class="explorer-tree-heading" id="explorer-zip-name">demo.zip</h2><div class="explorer-tree" id="explorer-tree"></div></aside>
+<section aria-label="Código del archivo" class="explorer-editor"><div class="explorer-tools"><button class="outline-btn" data-explorer-download="" type="button"><span data-i18n="download">DOWNLOAD</span></button><button class="outline-btn" id="explorer-copy" type="button"><span data-i18n="copy">COPY</span></button></div><div class="explorer-code-scroll"><div aria-label="Contenido del archivo" class="explorer-code" id="explorer-code" role="region"></div></div></section>
+</div>
+<footer class="explorer-footer"><button class="outline-btn" data-explorer-download="" type="button"><span data-i18n="download">DOWNLOAD</span> <span class="shortcut">CTRL + ↵</span></button><button class="outline-btn" id="explorer-close" type="button"><span data-i18n="close">CLOSE</span> <span class="shortcut">ESC</span></button></footer>
+</div></div></div><script>
+'use strict';
+// Catalogo curado. Las versiones se fijan como rangos mayores mantenidos localmente.
+const rawCatalog = [
+ ['express','Express 5','Framework','express','^5.3.0','Framework minimalista para crear APIs y servicios HTTP.','package','node express framework web'],
+ ['cors','CORS','HTTP','cors','^2.8.5','Configura peticiones cross-origin para tu API.','integrated','cross origin origen cruzado'],
+ ['helmet','Helmet','HTTP','helmet','^8.0.0','Cabeceras HTTP de seguridad.','integrated','seguridad headers'],
+ ['rate-limit','Express Rate Limit','HTTP','express-rate-limit','^8.0.0','Protección básica contra exceso de solicitudes.','integrated','limite rate limit throttling'],
+ ['compression','Compression','HTTP','compression','^1.8.0','Comprime las respuestas HTTP.','integrated','gzip'],
+ ['cookie-parser','Cookie Parser','HTTP','cookie-parser','^1.4.7','Lee cookies de las solicitudes.','integrated','cookies'],
+ ['zod','Zod','Validación','zod','^4.0.0','Validación de datos y esquemas con inferencia TypeScript.','integrated','validador schema'],
+ ['joi','Joi','Validación','joi','^17.0.0','Validación declarativa de objetos y payloads.','integrated','validador schema'],
+ ['express-validator','Express Validator','Validación','express-validator','^7.0.0','Middlewares de validación de rutas Express.','package','validation'],
+ ['mongoose','Mongoose','Base de datos','mongoose','^9.0.0','ODM para MongoDB; genera función de conexión.','external','mongo mongodb odm'],
+ ['mongodb','MongoDB Native Driver','Base de datos','mongodb','^7.0.0','Driver oficial para MongoDB sin ODM.','package','mongo'],
+ ['pg','PostgreSQL','Base de datos','pg','^8.0.0','Cliente SQL para PostgreSQL.','package','postgres sql'],
+ ['mysql2','MySQL2','Base de datos','mysql2','^3.0.0','Driver para MySQL / MariaDB.','package','mysql sql'],
+ ['better-sqlite3','SQLite','Base de datos','better-sqlite3','^12.0.0','Base de datos SQLite local.','package','sqlite'],
+ ['prisma','Prisma ORM','ORM','@prisma/client','^7.0.0','Cliente y CLI de Prisma. Configuración manual necesaria.','external','orm sql database'],
+ ['drizzle','Drizzle ORM','ORM','drizzle-orm','^0.44.0','ORM SQL tipado, requiere configurar dialecto y driver.','package','orm'],
+ ['typeorm','TypeORM','ORM','typeorm','^0.3.0','Mapeo objeto-relacional.','package','orm'],
+ ['sequelize','Sequelize','ORM','sequelize','^6.0.0','ORM SQL tradicional.','package','orm'],
+ ['jwt','JSON Web Token','Auth','jsonwebtoken','^9.0.0','Firma y verifica tokens JWT (no genera login).','package','jwt auth authentication token'],
+ ['bcrypt','bcrypt','Auth','bcrypt','^6.0.0','Hash de contraseñas con bcrypt.','package','password'],
+ ['bcryptjs','bcryptjs','Auth','bcryptjs','^3.0.0','bcrypt implementado en JavaScript.','package','password'],
+ ['argon2','Argon2','Auth','argon2','^0.44.0','Hash de contraseñas moderno.','package','hash password'],
+ ['passport','Passport','Auth','passport','^0.7.0','Framework de autenticación extensible.','package','oauth'],
+ ['passport-jwt','Passport JWT','Auth','passport-jwt','^4.0.0','Estrategia JWT para Passport.','package','auth'],
+ ['session','Express Session','Auth','express-session','^1.18.0','Manejo de sesiones en servidor.','package','cookies'],
+ ['socket.io','Socket.IO','Tiempo real','socket.io','^4.0.0','Servidor WebSocket/eventos en tiempo real.','integrated','socket sockets websocket realtime'],
+ ['ws','ws','Tiempo real','ws','^8.0.0','Servidor WebSocket estándar de bajo nivel.','package','websocket'],
+ ['redis','Redis','Caché y colas','redis','^5.0.0','Cliente de Redis (requiere instancia externa).','external','cache'],
+ ['ioredis','ioredis','Caché y colas','ioredis','^5.0.0','Cliente Redis alternativo.','external','cache'],
+ ['bullmq','BullMQ','Caché y colas','bullmq','^5.0.0','Colas y trabajos asíncronos sobre Redis.','external','queues jobs'],
+ ['swagger','Swagger UI / OpenAPI','Documentación','swagger-ui-express','^5.0.0','Documentación interactiva en /docs.','integrated','openapi api docs swagger'],
+ ['pino','Pino HTTP','Logging','pino-http','^10.0.0','Registra peticiones HTTP con Pino.','integrated','logs logger'],
+ ['morgan','Morgan','Logging','morgan','^1.10.0','Registra solicitudes HTTP en consola.','integrated','logs logger'],
+ ['winston','Winston','Logging','winston','^3.0.0','Sistema de logs configurable.','package','logger'],
+ ['dotenv','dotenv','Configuración','dotenv','^17.0.0','Carga variables desde archivo .env.','integrated','env environment'],
+ ['envalid','envalid','Configuración','envalid','^8.0.0','Valida variables de entorno.','package','env'],
+ ['multer','Multer','Archivos','multer','^2.0.0','Recibe archivos multipart/form-data.','package','upload files'],
+ ['sharp','Sharp','Archivos','sharp','^0.34.0','Procesamiento de imágenes de alto rendimiento.','package','image resize'],
+ ['aws-s3','AWS SDK S3','Archivos','@aws-sdk/client-s3','^3.0.0','Cliente AWS S3 para objetos y archivos.','external','s3 cloud'],
+ ['nodemailer','Nodemailer','Mensajería','nodemailer','^7.0.0','Envía correos SMTP.','external','email mail'],
+ ['amqplib','RabbitMQ','Mensajería','amqplib','^0.10.0','Cliente AMQP para RabbitMQ.','external','queue rabbit'],
+ ['kafkajs','KafkaJS','Mensajería','kafkajs','^2.0.0','Cliente para Apache Kafka.','external','eventos'],
+ ['axios','Axios','HTTP Client','axios','^1.0.0','Cliente HTTP basado en promesas.','package','api rest'],
+ ['undici','Undici','HTTP Client','undici','^7.0.0','Cliente HTTP de alto rendimiento.','package','fetch'],
+ ['node-cron','node-cron','Jobs','node-cron','^4.0.0','Ejecuta tareas programadas.','package','scheduler cron'],
+ ['uuid','UUID','Utilidades','uuid','^13.0.0','Genera identificadores UUID.','package','identificador guid'],
+ ['nanoid','Nano ID','Utilidades','nanoid','^5.0.0','Genera IDs cortos.','package','id'],
+ ['dayjs','Day.js','Utilidades','dayjs','^1.11.0','Manejo y formato de fechas.','package','dates fechas'],
+ ['lodash','Lodash','Utilidades','lodash','^4.17.21','Funciones utilitarias.','package','utils'],
+ ['nodemon','Nodemon','Desarrollo','nodemon','^3.0.0','Reinicia el servidor al cambiar archivos JS.','integrated','dev reload'],
+ ['eslint','ESLint','Desarrollo','eslint','^9.0.0','Analiza la calidad del código.','package','lint'],
+ ['prettier','Prettier','Desarrollo','prettier','^3.0.0','Formatea archivos de código.','package','format'],
+ ['vitest','Vitest','Testing','vitest','^3.0.0','Runner de pruebas unitarias.','package','test'],
+ ['jest','Jest','Testing','jest','^30.0.0','Framework de pruebas automatizadas.','package','test'],
+ ['supertest','Supertest','Testing','supertest','^7.0.0','Prueba endpoints HTTP de Express.','package','test api']
+];
+const CATALOG = rawCatalog.map(([id,title,category,pkg,version,description,mode,aliases])=>({id,title,category,pkg,version,description,mode,aliases}));
+const BY_ID=Object.fromEntries(CATALOG.map(x=>[x.id,x]));
+const CATEGORIES=[...new Set(CATALOG.map(x=>x.category))];
+
+const LOCALE_STORE='node-initializr-ui-language-v1';
+const URL_LANG=new URLSearchParams(window.location.search).get('lang');
+let uiLang=['en','pt','es'].includes(URL_LANG)?URL_LANG:(['en','pt','es'].includes(storageGet(LOCALE_STORE))?storageGet(LOCALE_STORE):'es');
+const I18N={
+ en:{packaging:'Packaging',packNone:'None',current:'Current',descriptionPlaceholder:'My Node.js project',searchPlaceholder:'Express, Mongoose, Zod, Joi, CORS, Socket.IO...',language:'Language',module:'Module system',manager:'Package manager',metadata:'Project Metadata',artifact:'Artifact',description:'Description',version:'Version',dependencies:'Dependencies',add:'ADD DEPENDENCIES...',noDeps:'No dependency selected',generate:'GENERATE',explore:'EXPLORE',ctrl:'Hold Ctrl to select multiple',history:'History',clear:'CLEAR',close:'CLOSE',download:'DOWNLOAD',copy:'COPY',noResults:'No dependencies found.',remove:'Remove',notice:'Notice',today:'Today',historyEmpty:'No projects generated yet.',restore:'Restore project',edit:'Edit',favorite:'Favorite',delete:'Delete',nodeDocs:'Node.js Documentation',nodeRepo:'Official Node.js Repository',customSoftware:'Custom software development',madeIn:'Based in',menu:'Menu',light:'Light mode',dark:'Dark mode',catSearch:'Search dependency',copied:'File copied',downloaded:'ZIP downloaded',restored:'Configuration restored',invalidName:'Enter a valid lowercase npm identifier without spaces.',invalidVersion:'Use a SemVer version, e.g. 0.1.0',zipError:'Could not generate ZIP',copyError:'Could not copy file',noCompatible:'Package only; no code is generated.'},
+ pt:{packaging:'Empacotamento',packNone:'Nenhum',current:'Atual',descriptionPlaceholder:'Meu projeto Node.js',searchPlaceholder:'Express, Mongoose, Zod, Joi, CORS, Socket.IO...',language:'Linguagem',module:'Sistema de módulos',manager:'Gerenciador de pacotes',metadata:'Dados do projeto',artifact:'Artefato',description:'Descrição',version:'Versão',dependencies:'Dependências',add:'ADICIONAR DEPENDÊNCIAS...',noDeps:'Nenhuma dependência selecionada',generate:'GERAR',explore:'EXPLORAR',ctrl:'Segure Ctrl para selecionar várias',history:'Histórico',clear:'LIMPAR',close:'FECHAR',download:'BAIXAR',copy:'COPIAR',noResults:'Nenhuma dependência encontrada.',remove:'Remover',notice:'Aviso',today:'Hoje',historyEmpty:'Nenhum projeto gerado ainda.',restore:'Restaurar projeto',edit:'Editar',favorite:'Favorito',delete:'Excluir',nodeDocs:'Documentação do Node.js',nodeRepo:'Repositório oficial do Node.js',customSoftware:'Desenvolvimento de software sob medida',madeIn:'Localizado em',menu:'Menu',light:'Modo claro',dark:'Modo escuro',catSearch:'Buscar dependência',copied:'Arquivo copiado',downloaded:'ZIP baixado',restored:'Configuração restaurada',invalidName:'Use um identificador npm válido, em minúsculas e sem espaços.',invalidVersion:'Use uma versão SemVer, por exemplo 0.1.0',zipError:'Não foi possível gerar o ZIP',copyError:'Não foi possível copiar o arquivo',noCompatible:'Somente pacote; nenhum código é gerado.'},
+ es:{packaging:'Empaquetado',packNone:'Ninguno',current:'Actual',descriptionPlaceholder:'Mi proyecto Node.js',searchPlaceholder:'Express, Mongoose, Zod, Joi, CORS, Socket.IO...',language:'Lenguaje',module:'Sistema de módulos',manager:'Gestor de paquetes',metadata:'Datos del proyecto',artifact:'Artefacto',description:'Descripción',version:'Versión',dependencies:'Dependencias',add:'AGREGAR DEPENDENCIAS...',noDeps:'Ninguna dependencia seleccionada',generate:'GENERAR',explore:'EXPLORAR',ctrl:'Mantén Ctrl para seleccionar varias',history:'Historial',clear:'LIMPIAR',close:'CERRAR',download:'DESCARGAR',copy:'COPIAR',noResults:'No se encontraron dependencias.',remove:'Quitar',notice:'Aviso',today:'Hoy',historyEmpty:'Todavía no hay proyectos generados.',restore:'Restaurar proyecto',edit:'Editar',favorite:'Favorito',delete:'Eliminar',nodeDocs:'Documentación de Node.js',nodeRepo:'Repositorio oficial de Node.js',customSoftware:'Desarrollo de software a medida',madeIn:'Ubicado en',menu:'Menú',light:'Modo claro',dark:'Modo oscuro',catSearch:'Buscar dependencia',copied:'Archivo copiado',downloaded:'ZIP descargado',restored:'Configuración restaurada',invalidName:'Usa un identificador npm válido, en minúsculas y sin espacios.',invalidVersion:'Usa una versión SemVer, por ejemplo 0.1.0',zipError:'No se pudo generar el ZIP',copyError:'No se pudo copiar el archivo',noCompatible:'Solo paquete; no se genera código.'}
+};
+function tr(k){return I18N[uiLang]?.[k]||I18N.en[k]||k}
+const CATEGORY_L10N={
+ 'Framework':['Framework','Framework','Framework'], 'HTTP':['HTTP','HTTP','HTTP'], 'Validación':['Validation','Validação','Validación'], 'Base de datos':['Database','Banco de dados','Base de datos'], 'ORM':['ORM','ORM','ORM'], 'Auth':['Authentication','Autenticação','Autenticación'], 'Tiempo real':['Real time','Tempo real','Tiempo real'], 'Caché y colas':['Cache & queues','Cache e filas','Caché y colas'], 'Documentación':['Documentation','Documentação','Documentación'], 'Logging':['Logging','Logs','Registros'], 'Configuración':['Configuration','Configuração','Configuración'], 'Archivos':['Files','Arquivos','Archivos'], 'Mensajería':['Messaging','Mensageria','Mensajería'], 'HTTP Client':['HTTP Client','Cliente HTTP','Cliente HTTP'], 'Jobs':['Jobs','Tarefas','Tareas'], 'Utilidades':['Utilities','Utilitários','Utilidades'], 'Desarrollo':['Development','Desenvolvimento','Desarrollo'], 'Testing':['Testing','Testes','Pruebas']
+};
+function catName(category){const names=CATEGORY_L10N[category];return names?names[{en:0,pt:1,es:2}[uiLang]]:category}
+// Catalog translations indexed by ID. Package names remain unchanged.
+const DESC_EN=[
+'Minimal framework for APIs and HTTP services.','Enables cross-origin requests to your API.','Sets secure HTTP response headers.','Limits excessive API requests.','Compresses HTTP responses.','Parses incoming request cookies.','Schema validation with TypeScript inference.','Declarative object and payload validation.','Validation middleware for Express routes.','MongoDB ODM for object modeling.','Official MongoDB database driver.','PostgreSQL SQL client.','MySQL and MariaDB driver.','Local SQLite database.','Prisma client and CLI; manual setup required.','Type-safe SQL ORM; requires driver configuration.','Object-relational mapping.','Traditional SQL ORM.','Signs and verifies JWT tokens; no login flow.','Password hashing using bcrypt.','JavaScript implementation of bcrypt.','Modern password hashing.','Extensible authentication middleware.','JWT strategy for Passport.','Server-side session management.','Real-time events and sockets.','Low-level WebSocket server.','Redis client; external service required.','Alternative Redis client.','Redis-powered background jobs and queues.','Interactive OpenAPI documentation.','HTTP request logging with Pino.','Logs HTTP requests to the console.','Configurable application logging.','Loads environment variables from .env.','Environment variable validation.','Handles multipart file uploads.','Fast image processing.','AWS S3 object storage client.','Sends emails through SMTP.','RabbitMQ AMQP client.','Apache Kafka client.','Promise-based HTTP client.','High-performance HTTP client.','Schedules recurring tasks.','Generates UUID identifiers.','Creates short unique IDs.','Date parsing and formatting.','Utility helper functions.','Restarts development server after changes.','JavaScript and TypeScript code linting.','Automatic source formatting.','Unit test runner.','Automated testing framework.','Tests HTTP endpoints.'
+];
+const DESC_PT=[
+'Framework minimalista para APIs e serviços HTTP.','Habilita requisições entre origens para sua API.','Adiciona cabeçalhos HTTP de segurança.','Limita solicitações excessivas à API.','Comprime as respostas HTTP.','Lê cookies das requisições.','Validação de esquemas com inferência TypeScript.','Validação declarativa de objetos e payloads.','Middlewares de validação para rotas Express.','ODM para modelagem com MongoDB.','Driver oficial do MongoDB.','Cliente SQL para PostgreSQL.','Driver para MySQL e MariaDB.','Banco de dados SQLite local.','Cliente e CLI Prisma; configuração manual necessária.','ORM SQL tipado; requer configurar o driver.','Mapeamento objeto-relacional.','ORM SQL tradicional.','Assina e verifica tokens JWT; não cria login.','Hash de senhas com bcrypt.','Implementação JavaScript do bcrypt.','Hash moderno de senhas.','Middleware de autenticação extensível.','Estratégia JWT para Passport.','Gerenciamento de sessões no servidor.','Eventos e sockets em tempo real.','Servidor WebSocket de baixo nível.','Cliente Redis; exige serviço externo.','Cliente Redis alternativo.','Filas e tarefas em segundo plano com Redis.','Documentação OpenAPI interativa.','Logs de requisições HTTP com Pino.','Registra requisições HTTP no console.','Sistema configurável de logs.','Carrega variáveis de ambiente do .env.','Valida variáveis de ambiente.','Gerencia upload de arquivos multipart.','Processamento rápido de imagens.','Cliente de armazenamento de objetos AWS S3.','Envia e-mails via SMTP.','Cliente AMQP para RabbitMQ.','Cliente para Apache Kafka.','Cliente HTTP baseado em promessas.','Cliente HTTP de alto desempenho.','Agenda tarefas recorrentes.','Gera identificadores UUID.','Gera IDs curtos e únicos.','Manipula e formata datas.','Funções utilitárias.','Reinicia a aplicação após mudanças.','Analisa a qualidade do código JS/TS.','Formata arquivos automaticamente.','Executor de testes unitários.','Framework de testes automatizados.','Testa endpoints HTTP.'
+];
+const DESCRIPTION_BY_ID=Object.fromEntries(rawCatalog.map(([id],i)=>[id,{en:DESC_EN[i],pt:DESC_PT[i]}]));
+function depDescription(d){return uiLang==='es'?d.description:(DESCRIPTION_BY_ID[d.id]?.[uiLang]||d.description)}
+
+/* Search-preview metadata and distinct language URLs for hosted deployments.
+   No production domain is assumed. Once hosted, ?lang=en / ?lang=es / ?lang=pt
+   receive the corresponding browser-rendered content. */
+const SEO_CONTENT={
+ es:{title:'Node Initializr — Generador gratuito de proyectos Node.js',description:'Crea un proyecto Node.js con JavaScript o TypeScript. Selecciona Express, Mongoose, Zod, Socket.IO y más dependencias; explora y descarga el ZIP gratis.',og:'Node Initializr — Crea tu proyecto Node.js',locale:'es_PE'},
+ en:{title:'Node Initializr — Free Node.js Project Generator',description:'Generate a Node.js starter project with JavaScript or TypeScript. Choose Express, Mongoose, Zod, Socket.IO and more packages, preview files and download a ZIP.',og:'Node Initializr — Generate your Node.js project',locale:'en_US'},
+ pt:{title:'Node Initializr — Gerador gratuito de projetos Node.js',description:'Crie um projeto Node.js com JavaScript ou TypeScript. Escolha Express, Mongoose, Zod, Socket.IO e outras dependências, visualize os arquivos e baixe o ZIP.',og:'Node Initializr — Crie seu projeto Node.js',locale:'pt_BR'}
+};
+function updateLanguageSEO(lang){
+ const data=SEO_CONTENT[lang]||SEO_CONTENT.es;
+ document.title=data.title;
+ function meta(selector,text){const el=document.querySelector(selector);if(el)el.setAttribute('content',text)}
+ meta('meta[name="description"]',data.description);
+ meta('meta[property="og:title"]',data.og);
+ meta('meta[property="og:description"]',data.description);
+ meta('meta[property="og:locale"]',data.locale);
+ meta('meta[name="twitter:title"]',data.og);
+ meta('meta[name="twitter:description"]',data.description);
+ const hosted=/^https?:$/.test(location.protocol);
+ if(!hosted)return;
+ const base=new URL(location.pathname,location.origin);
+ const linkTo=(code)=>{const u=new URL(base.href);if(code!=='es')u.searchParams.set('lang',code);return u.href};
+ // Hreflang/canonical are only emitted with the actual deployed hostname.
+ for(const code of ['es','en','pt','x-default']){
+   let link=document.querySelector(`link[rel="alternate"][hreflang="${code}"]`);
+   if(!link){link=document.createElement('link');link.rel='alternate';link.hreflang=code;document.head.append(link)}
+   link.href=linkTo(code==='x-default'?'es':code);
+ }
+ let canonical=document.querySelector('link[rel="canonical"]');
+ if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.append(canonical)}
+ canonical.href=linkTo(lang);
+ meta('meta[property="og:url"]',linkTo(lang));
+}
+
+function applyLanguage(lang){
+ uiLang=['en','pt','es'].includes(lang)?lang:'en';storageSet(LOCALE_STORE,uiLang);document.documentElement.lang=uiLang;
+ updateLanguageSEO(uiLang);
+ if(/^https?:$/.test(location.protocol)){
+   const current=new URL(location.href);
+   if(uiLang==='es')current.searchParams.delete('lang');else current.searchParams.set('lang',uiLang);
+   // Preserve other query args and avoid triggering a full-page reload.
+   try{history.replaceState(history.state,'',current)}catch{}
+ }
+
+ for(const select of [$('ui-language'),$('explorer-ui-language')])if(select)select.value=uiLang;
+ document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=tr(el.dataset.i18n)});
+ $('dep-search').setAttribute('aria-label',tr('catSearch'));$('dep-search').placeholder=tr('searchPlaceholder');$('description').placeholder=tr('descriptionPlaceholder');
+ $('menu-button').title=tr('menu');$('theme-light').title=tr('light');$('theme-dark').title=tr('dark');
+ renderSelected();if(!$('catalog-overlay').classList.contains('hidden'))renderCatalog();
+ if(!$('history-overlay').classList.contains('hidden'))renderHistory();
+ if(!$('drawer-overlay').classList.contains('hidden'))drawerRefresh();
+}
+function drawerRefresh(){const nav=$('drawer-content');if(nav){const links=nav.querySelectorAll('a.menu-link');if(links[0])links[0].textContent=tr('nodeDocs');if(links[1])links[1].textContent=tr('nodeRepo');const promo=nav.querySelector('.promo-caption');if(promo)promo.textContent=tr('customSoftware');const loc=nav.querySelector('.menu-promo p');if(loc)loc.textContent=tr('madeIn')+' Lima, San Borja, Perú'}}
+
+const DEFAULT={name:'demo',description:'',version:'0.1.0',language:'javascript',module:'esm',nodeVersion:'24',packageManager:'npm',packaging:'none',dependencies:[],custom:[]};
+const STORE='express-initializr-settings-v1', HISTORY_STORE='express-initializr-history-v1';
+function storageGet(key){try{return JSON.parse(localStorage.getItem(key))}catch{return null}}
+function storageSet(key,v){try{localStorage.setItem(key,JSON.stringify(v))}catch{}}
+let state=normalize(DEFAULT);
+// El borrador no persiste: únicamente historial, idioma y tema quedan en localStorage.
+try{localStorage.removeItem(STORE)}catch{}
+let history=Array.isArray(storageGet(HISTORY_STORE))?storageGet(HISTORY_STORE).filter(h=>h&&h.state&&h.at).slice(0,10).map(h=>({...h,label:h.label||h.state.name||'demo',favorite:Boolean(h.favorite)})):[];
+let searchText='',catalogIndex=-1,lastFocus=null,toastTimer=null;
+function normalize(s){const p={...DEFAULT,...(s&&typeof s==='object'?s:{})}; for(const k of ['port','configuration','author','structure','readme'])delete p[k];if(!['none','docker','compose'].includes(p.packaging))p.packaging='none';p.dependencies=Array.isArray(p.dependencies)?[...new Set(p.dependencies.filter(d=>BY_ID[d]))]:[];p.custom=[];return p}
+const $=id=>document.getElementById(id);
+function htmlEsc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function notify(message){const t=$('toast');t.textContent=message;t.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.add('hidden'),3100)}
+function persist(){/* Draft intentionally kept in RAM until a ZIP is generated. */}
+function isSelected(id){return state.dependencies.includes(id)}
+function installMode(x){return x.mode==='integrated'?'Integrada':x.mode==='external'?'Requiere configuración':'Solo paquete'}
+function dependencyCount(){return state.dependencies.length}
+function renderSelected(){
+ const el=$('selected-list');
+ if(!dependencyCount()){el.innerHTML='<p class="empty-state">'+htmlEsc(tr('noDeps'))+'</p>'}
+ else el.innerHTML=state.dependencies.map(id=>{const d=BY_ID[id];return `<article class="selected-dep"><div class="selected-copy"><h3>${htmlEsc(d.title)}</h3><span class="dep-kind">${htmlEsc(catName(d.category))}</span><div class="dep-detail">${htmlEsc(depDescription(d))}</div></div><button class="remove-dep" data-remove="${d.id}" aria-label="${htmlEsc(tr('remove'))} ${htmlEsc(d.title)}" title="${htmlEsc(tr('remove'))}"><svg aria-hidden="true" viewBox="0 0 512 512" class="icon-remove"><path class="st0" d="M494,256c0,131.4-106.6,238-238,238S18,387.4,18,256S124.6,18,256,18S494,124.6,494,256z"/><line class="st1" x1="114.4" y1="260" x2="397.5" y2="260"/></svg></button></article>`}).join('');
+ $('selection-note').innerHTML='';
+}
+function renderTheme(){const dark=document.documentElement.dataset.theme==='dark';$('theme-light').classList.toggle('active',!dark);$('theme-dark').classList.toggle('active',dark);$('theme-light').setAttribute('aria-pressed',String(!dark));$('theme-dark').setAttribute('aria-pressed',String(dark));$('explorer-theme-light').classList.toggle('active',!dark);$('explorer-theme-dark').classList.toggle('active',dark)}
+function setTheme(t){document.documentElement.dataset.theme=t;storageSet('express-init-theme',t);renderTheme()}
+setTheme(storageGet('express-init-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+function applyState(){for(const [k,v] of Object.entries(state)){if(['dependencies','custom','readme'].includes(k))continue;const radio=document.querySelector(`input[type="radio"][name="${k}"][value="${CSS.escape(String(v))}"]`);if(radio)radio.checked=true;const input=$(k);if(input&&input.matches('input')&&input.type!=='radio')input.value=v;} renderSelected();validate(false)}
+function toggleDependency(id){if(!BY_ID[id])return;state.dependencies=isSelected(id)?state.dependencies.filter(v=>v!==id):[...state.dependencies,id];persist();renderSelected();renderCatalog()}
+function validationErrors(){const err=[];if(!/^[a-z0-9][a-z0-9._-]*$/.test(String(state.name))||String(state.name).length>120||state.name==='.'||state.name==='..')err.push(['name',tr('invalidName')]);if(!/^\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(state.version))err.push(['version',tr('invalidVersion')]);return err}
+function validate(show=true){const errors=validationErrors();for(const id of ['name']){const el=$('field-'+id);const errorEl=$(id+'-error');if(el){const found=errors.find(e=>e[0]===id);el.classList.toggle('invalid',Boolean(found));errorEl.classList.toggle('hidden',!found);errorEl.textContent=found?found[1]:''}}const versionErr=errors.find(e=>e[0]==='version');$('version').style.borderBottomColor=versionErr?'var(--danger)':'';if(show&&errors.length)notify(errors[0][1]);return errors.length===0}
+const OVERLAYS=['catalog-overlay','drawer-overlay','history-overlay'];
+let overlayCloseTimer=null;
+function openOverlay(id,focusId){
+ clearTimeout(overlayCloseTimer);lastFocus=document.activeElement;
+ for(const other of OVERLAYS){if(other!==id){$(other).classList.remove('is-exiting');$(other).classList.add('hidden')}}
+ const o=$(id);o.classList.remove('hidden','is-exiting');o.classList.remove('is-entering');void o.offsetWidth;o.classList.add('is-entering');
+ document.body.classList.add('modal-open');if(focusId)requestAnimationFrame(()=>$(focusId)?.focus({preventScroll:true}));
+}
+function closeOverlays(){
+ $('menu-button').classList.remove('is-active');$('menu-button').setAttribute('aria-expanded','false');
+ $('close-drawer').classList.remove('is-active');
+ const open=OVERLAYS.filter(id=>!$(id).classList.contains('hidden'));
+ for(const id of open){const o=$(id);o.classList.remove('is-entering');o.classList.add('is-exiting')}
+ clearTimeout(overlayCloseTimer);
+ overlayCloseTimer=setTimeout(()=>{for(const id of open){const o=$(id);if(o.classList.contains('is-exiting'))o.classList.add('hidden')}if(!OVERLAYS.some(id=>!$(id).classList.contains('hidden'))&&!explorerVisible())document.body.classList.remove('modal-open');
+   if($('drawer-overlay').classList.contains('hidden'))document.body.classList.remove('menu-visible');
+ },460);
+ if(lastFocus&&lastFocus.focus)lastFocus.focus({preventScroll:true});
+}
+function openCatalog(){searchText='';catalogIndex=-1;$('dep-search').value='';renderCatalog();openOverlay('catalog-overlay','dep-search')}
+function matchingCatalog(){const q=searchText.toLowerCase().trim();return CATALOG.filter(d=>!q||[d.title,d.pkg,d.description,DESCRIPTION_BY_ID[d.id]?.en,DESCRIPTION_BY_ID[d.id]?.pt,d.aliases,d.category,catName(d.category)].join(' ').toLowerCase().includes(q))}
+function renderCatalog(){const list=$('catalog-list'),scroll=list.scrollTop,customName=$('custom-npm')?.value||'',customVersion=$('custom-version')?.value||'*',items=matchingCatalog();catalogIndex=items.length?Math.min(catalogIndex,items.length-1):-1;const grouped=new Map();for(const d of items){if(!grouped.has(d.category))grouped.set(d.category,[]);grouped.get(d.category).push(d)}let idx=0,output='';for(const [cat,group] of grouped){output+=`<div class="catalog-heading"><span class="dep-kind">${htmlEsc(catName(cat))}</span></div>`;for(const d of group){const pos=idx++;output+=`<button type="button" class="catalog-item ${pos===catalogIndex?'focused':''}" data-dep="${d.id}" data-index="${pos}" title="${htmlEsc(d.pkg)} · ${htmlEsc(installMode(d))}" aria-pressed="${isSelected(d.id)}"><span class="catalog-copy"><strong class="name">${htmlEsc(d.title)}</strong><span class="sub">${htmlEsc(depDescription(d))}</span></span><span class="catalog-picked" aria-hidden="true">${pos===catalogIndex?'↵':''}</span></button>`}}
+ list.innerHTML=(output||`<div class="catalog-empty">${htmlEsc(tr('noResults'))}</div>`);list.scrollTop=scroll;
+}
+function setFocusCatalog(){const b=$('catalog-list').querySelector(`[data-index="${catalogIndex}"]`);if(b)b.scrollIntoView({block:'nearest'})}
+// Motor de generación ZIP: plantillas y configuración del proyecto.
+function buildProjectFiles(p){
+ // Plantilla Node sencilla: las dependencias seleccionadas solo van a package.json.
+ // Packaging solo agrega los ficheros Docker elegidos por el usuario.
+ const ts=p.language==='typescript',esm=p.module==='esm',ext=ts?'ts':'js';
+ const deps={},dev={};const devIds=new Set(['nodemon','eslint','prettier','vitest','jest','supertest']);
+ for(const id of p.dependencies||[]){const d=BY_ID[id];if(d)(devIds.has(id)?dev:deps)[d.pkg]=d.version;}
+ if(ts){dev.typescript='^5.9.0';dev.tsx='^4.20.0';dev['@types/node']='^24.0.0';}
+ if((p.dependencies||[]).includes('prisma'))dev.prisma='^7.0.0';
+ const hasNodemon=(p.dependencies||[]).includes('nodemon');
+ const scripts={
+   dev:ts?(hasNodemon?'nodemon --watch src --ext ts --exec "tsx src/app.ts"':'tsx watch src/app.ts'):(hasNodemon?'nodemon src/app.js':'node --watch src/app.js'),
+   start:ts?'node dist/app.js':'node src/app.js'
+ };
+ if(ts)scripts.build='tsc -p tsconfig.json';
+ const manifest={name:p.name,version:p.version,private:true,description:p.description||'',type:esm?'module':'commonjs',engines:{node:`>=${p.nodeVersion}.0.0`},scripts};
+ if(Object.keys(deps).length)manifest.dependencies=Object.fromEntries(Object.entries(deps).sort(([a],[b])=>a.localeCompare(b)));
+ if(Object.keys(dev).length)manifest.devDependencies=Object.fromEntries(Object.entries(dev).sort(([a],[b])=>a.localeCompare(b)));
+ const files={'.gitignore':'node_modules/\ndist/\n.DS_Store\n','package.json':JSON.stringify(manifest,null,2)+'\n'};
+ files[`src/app.${ext}`]=`console.log('Hello world');\n`;
+ if(ts)files['tsconfig.json']=JSON.stringify({compilerOptions:{target:'ES2022',module:esm?'NodeNext':'CommonJS',moduleResolution:esm?'NodeNext':'Node',rootDir:'src',outDir:'dist',strict:true,esModuleInterop:true,skipLibCheck:true},include:['src/**/*.ts']},null,2)+'\n';
+ if(p.packaging==='docker'||p.packaging==='compose'){
+   const commands={npm:{install:'npm install',build:'npm run build',start:'npm run start'},pnpm:{install:'npm install -g pnpm && pnpm install',build:'pnpm run build',start:'pnpm start'},yarn:{install:'npm install -g yarn && yarn install',build:'yarn build',start:'yarn start'}};
+   const c=commands[p.packageManager]||commands.npm;
+   const docker=['FROM node:'+p.nodeVersion+'-alpine','WORKDIR /app','COPY package.json ./','RUN '+c.install,'COPY . .'];
+   if(ts)docker.push('RUN '+c.build);
+   docker.push('CMD ["'+(p.packageManager==='npm'?'npm':p.packageManager)+'", "'+(p.packageManager==='yarn'?'start':'run')+'"'+(p.packageManager==='yarn'?'':', "start"')+']');
+   files['Dockerfile']=docker.join('\n')+'\n';
+   files['.dockerignore']='node_modules\ndist\n.git\n';
+   if(p.packaging==='compose')files['compose.yaml']='services:\n  app:\n    build: .\n    restart: "no"\n';
+ }
+ return files;
+}
+
+function currentFiles(){return buildProjectFiles(state)}
+function updateHistoryVisible(){const visible=history.length>0;$('history-button').classList.toggle('hidden',!visible);document.querySelector('.rail-rule').classList.toggle('hidden',!visible)}
+function saveHistory(snapshot){const item={id:Date.now()+'-'+Math.floor(Math.random()*10000),at:new Date().toISOString(),label:snapshot.name,favorite:false,state:JSON.parse(JSON.stringify(snapshot))};history=[item,...history].slice(0,10);storageSet(HISTORY_STORE,history);updateHistoryVisible()}
+function generate(){if(!validate())return;const snapshot=normalize(JSON.parse(JSON.stringify(state))),files=buildProjectFiles(snapshot);try{downloadZip(files,snapshot.name+'.zip',snapshot.name);saveHistory(snapshot);notify(tr('downloaded')+': '+snapshot.name+'.zip')}catch(e){console.error(e);notify(tr('zipError')+': '+e.message)}}
+// ZIP STORE (sin compresión), estándar PKZIP con CRC32 y nombres UTF-8; cero CDNs.
+const encoder=new TextEncoder();
+const crcTable=(()=>{const t=new Uint32Array(256);for(let i=0;i<256;i++){let c=i;for(let j=0;j<8;j++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);t[i]=c>>>0}return t})();
+function crc32(bytes){let v=0xffffffff;for(const b of bytes)v=(v>>>8)^crcTable[(v^b)&255];return(v^0xffffffff)>>>0}
+function zipBlob(files,folder){const local=[],central=[];let offset=0;const now=new Date(),dosTime=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()>>>1),dosDate=((Math.max(1980,now.getFullYear())-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();let n=0;function header(len){return new DataView(new ArrayBuffer(len))}function bytes(dv){return new Uint8Array(dv.buffer)}for(const [path,content] of Object.entries(files).sort(([a],[b])=>a.localeCompare(b))){const name=encoder.encode(folder+'/'+path),body=encoder.encode(content),crc=crc32(body);const l=header(30);l.setUint32(0,0x04034b50,true);l.setUint16(4,20,true);l.setUint16(6,0x800,true);l.setUint16(8,0,true);l.setUint16(10,dosTime,true);l.setUint16(12,dosDate,true);l.setUint32(14,crc,true);l.setUint32(18,body.length,true);l.setUint32(22,body.length,true);l.setUint16(26,name.length,true);local.push(bytes(l),name,body);const c=header(46);c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x800,true);c.setUint16(10,0,true);c.setUint16(12,dosTime,true);c.setUint16(14,dosDate,true);c.setUint32(16,crc,true);c.setUint32(20,body.length,true);c.setUint32(24,body.length,true);c.setUint16(28,name.length,true);c.setUint32(42,offset,true);central.push(bytes(c),name);offset+=30+name.length+body.length;n++}const cSize=central.reduce((s,b)=>s+b.length,0),end=header(22);end.setUint32(0,0x06054b50,true);end.setUint16(8,n,true);end.setUint16(10,n,true);end.setUint32(12,cSize,true);end.setUint32(16,offset,true);return new Blob([...local,...central,bytes(end)],{type:'application/zip'})}
+function downloadZip(files,filename,folder){const blob=zipBlob(files,folder);const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000)}
+function renderHistory(){
+ const box=$('history-content');if(!history.length){box.innerHTML=`<p class="history-empty">${htmlEsc(tr('historyEmpty'))}</p>`;return;}
+ const groups=new Map();for(const [i,h] of history.entries()){
+  const dt=new Date(h.at);const locale={en:'en-GB',pt:'pt-BR',es:'es-ES'}[uiLang];
+  const today=new Date(),isToday=dt.toDateString()===today.toDateString();
+  const fmt=dt.toLocaleDateString(locale,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const date=(isToday?tr('today')+', ':'')+(uiLang==='en'?fmt.replace(/^(\w+),? (\d+) (\w+) (\d+)$/,(_m,day,num,month,year)=>`${day}, ${num} ${month} ${year}`):fmt);
+  if(!groups.has(date))groups.set(date,[]);groups.get(date).push([i,h]);
+ }
+ const pencil='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l11-11-4-4L4 16v4zM13 7l4 4"/></svg>';
+ const star='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.2 6.5 7.2 1-5.2 5 .9 7-6.1-3.3L5.9 21l1-7-5-5 7-1z"/></svg>';
+ const trash='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></svg>';
+ box.innerHTML=[...groups].map(([date,items])=>`<h3 class="history-date">${htmlEsc(date)}</h3>`+items.map(([i,h])=>`<div class="history-entry ${h.favorite?'is-favorite':''}"><span class="history-time">${new Date(h.at).toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',hour12:false})}</span><button class="history-text history-restore" data-restore="${i}" title="${htmlEsc(tr('restore'))}"><strong>${htmlEsc(h.label||h.state.name)}</strong><span>${htmlEsc(h.state.language)}, Node ${htmlEsc(h.state.nodeVersion)} · ${(h.state.dependencies||[]).map(id=>htmlEsc(BY_ID[id]?.title||id)).join(', ')||tr('noDeps')}</span></button><div class="history-actions"><button type="button" data-rename="${i}" aria-label="${htmlEsc(tr('edit'))}" title="${htmlEsc(tr('edit'))}">${pencil}</button><button type="button" class="${h.favorite?'favorite-active':''}" data-favorite="${i}" aria-label="${htmlEsc(tr('favorite'))}" title="${htmlEsc(tr('favorite'))}">${star}</button><button type="button" data-delete-history="${i}" aria-label="${htmlEsc(tr('delete'))}" title="${htmlEsc(tr('delete'))}">${trash}</button></div></div>`).join('')).join('');
+}
+function openHistory(){renderHistory();openOverlay('history-overlay','close-history')}
+function drawer(){
+ if(!$('drawer-overlay').classList.contains('hidden') && !$('drawer-overlay').classList.contains('is-exiting')){closeOverlays();return}
+ document.body.classList.add('menu-visible');
+ $('menu-button').classList.add('is-active');$('menu-button').setAttribute('aria-expanded','true');
+ $('close-drawer').classList.add('is-active');
+ const box=$('drawer-content');
+ box.innerHTML=`<a class="menu-link" href="https://nodejs.org/en/learn" target="_blank" rel="noopener noreferrer">${htmlEsc(tr('nodeDocs'))}</a>
+ <a class="menu-link" href="https://github.com/nodejs/node" target="_blank" rel="noopener noreferrer">${htmlEsc(tr('nodeRepo'))}</a>
+ <div class="menu-promo"><div class="promo-caption">${htmlEsc(tr('customSoftware'))}</div><h2>Fábrica Abstracta S.A.C.</h2><p>${htmlEsc(tr('madeIn'))} Lima, San Borja, Perú</p><p>Marko Franchesco</p><a href="mailto:markofranchesco@gmail.com">markofranchesco@gmail.com</a><a href="tel:+51913951504">+51 913 951 504</a></div>`;
+ openOverlay('drawer-overlay','menu-button');
+}
+
+// Explorer: snapshot inmutable. El mismo FileMap alimenta el editor y la descarga ZIP.
+let explorerSnapshot=null,explorerActiveFile='package.json',openedFolders=new Set();
+function explorerVisible(){return !$('explorer-overlay').classList.contains('hidden')}
+function openExplorer(){
+ if(!validate())return;
+ const config=normalize(JSON.parse(JSON.stringify(state))),files=buildProjectFiles(config);
+ explorerSnapshot={config,files:Object.freeze({...files})};
+ explorerActiveFile=Object.hasOwn(files,'package.json')?'package.json':Object.keys(files)[0];openedFolders=new Set(['src']);
+ $('explorer-zip-name').textContent=config.name+'.zip';
+ closeOverlays();$('explorer-overlay').classList.remove('hidden');document.body.classList.add('modal-open');requestAnimationFrame(()=>requestAnimationFrame(()=>$('explorer-overlay').classList.add('is-open')));
+ renderExplorerTree();showExplorerFile(explorerActiveFile);$('explorer-close').focus({preventScroll:true});
+}
+function closeExplorer(){
+ if(!explorerVisible())return;
+ const o=$('explorer-overlay');o.classList.remove('is-open');
+ document.body.classList.remove('modal-open');
+ setTimeout(()=>{if(!o.classList.contains('is-open'))o.classList.add('hidden')},375);
+ $('explore-button').focus({preventScroll:true});
+}
+function makeExplorerTree(files){const root={directories:{},files:[]};for(const path of Object.keys(files).sort((a,b)=>a.localeCompare(b))){const parts=path.split('/');let node=root;for(const part of parts.slice(0,-1))node=node.directories[part]??={directories:{},files:[]};node.files.push({name:parts.at(-1),path})}return root}
+const EXPLORER_CARET='<svg aria-hidden="true" focusable="false" data-icon="caret-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon-caret-down"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/></svg>';
+function renderExplorerTree(){if(!explorerSnapshot)return;const tree=makeExplorerTree(explorerSnapshot.files);
+ const render=(n,prefix='',depth=0)=>{
+  let content='';for(const [name,child] of Object.entries(n.directories).sort(([a],[b])=>a.localeCompare(b))){const full=prefix?prefix+'/'+name:name,expanded=openedFolders.has(full);content+=`<button type="button" data-folder="${htmlEsc(full)}" style="padding-left:${8+depth*15}px" aria-expanded="${expanded}"><span class="tree-arrow ${expanded?'expanded':''}">${EXPLORER_CARET}</span><span class="tree-icon"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:17px;height:17px;fill:currentColor;stroke:none"><path d="M3 5h7l2 2h9v12H3z"/></svg></span><span class="tree-label">${htmlEsc(name)}</span></button>`;if(expanded)content+=render(child,full,depth+1)}
+  for(const f of n.files.sort((a,b)=>a.name.localeCompare(b.name))){content+=`<button type="button" data-file="${htmlEsc(f.path)}" class="${f.path===explorerActiveFile?'active':''}" style="padding-left:${9+depth*15}px" title="${htmlEsc(f.path)}"><span class="tree-arrow"></span><span class="tree-icon file-icon"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7"><path d="M5 2h9l5 5v15H5z M14 2v5h5"/></svg></span><span class="tree-label">${htmlEsc(f.name)}</span></button>`}return content;
+ };
+ $('explorer-tree').innerHTML=render(tree);
+}
+function highlightCode(line){const re=/(\/\/.*|#.*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b(?:import|from|export|default|const|let|function|return|async|await|if|else|new|require|true|false|null|type|interface|extends|module|services|environment|build|ports|EXPOSE|FROM|COPY|RUN|CMD|ENV|WORKDIR)\b|\b\d+(?:\.\d+)*\b)/g;let pos=0,output='';for(const m of line.matchAll(re)){output+=htmlEsc(line.slice(pos,m.index));let type=m[0].startsWith('//')||m[0].startsWith('#')?'comment':/^['"`]/.test(m[0])?'string':/^\d/.test(m[0])?'number':'keyword';output+=`<span class="syntax-${type}">${htmlEsc(m[0])}</span>`;pos=m.index+m[0].length}return output+htmlEsc(line.slice(pos))}
+function showExplorerFile(path){if(!explorerSnapshot||!Object.hasOwn(explorerSnapshot.files,path))return;explorerActiveFile=path;renderExplorerTree();const content=explorerSnapshot.files[path];const code=$('explorer-code');code.innerHTML=content.replace(/\n$/,'').split('\n').map((line,i)=>`<div class="code-line"><span class="code-number">${i+1}</span><span class="code-text">${highlightCode(line)||' '}</span></div>`).join('');code.parentElement.scrollTop=0;code.parentElement.scrollLeft=0}
+function explorerDownload(){if(!explorerSnapshot)return;try{const {config,files}=explorerSnapshot;downloadZip(files,config.name+'.zip',config.name);saveHistory(config);notify(tr('downloaded')+': '+config.name+'.zip')}catch(err){notify('No se pudo descargar el ZIP: '+err.message)}}
+async function explorerCopy(){if(!explorerSnapshot)return;const content=explorerSnapshot.files[explorerActiveFile];try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(content);else{const tmp=document.createElement('textarea');tmp.value=content;tmp.style.cssText='position:fixed;opacity:0';document.body.append(tmp);tmp.select();if(!document.execCommand('copy'))throw new Error('Permiso denegado');tmp.remove()}notify(tr('copied')+': '+explorerActiveFile)}catch{notify(tr('copyError'))}}
+$('explorer-tree').addEventListener('click',event=>{const folder=event.target.closest('[data-folder]'),file=event.target.closest('[data-file]');if(folder){const path=folder.dataset.folder;if(openedFolders.has(path))openedFolders.delete(path);else openedFolders.add(path);renderExplorerTree()}else if(file)showExplorerFile(file.dataset.file)});
+$('explorer-close').addEventListener('click',closeExplorer);$('explorer-home').addEventListener('click',closeExplorer);
+$('explorer-copy').addEventListener('click',explorerCopy);document.querySelectorAll('[data-explorer-download]').forEach(b=>b.addEventListener('click',explorerDownload));
+$('explorer-theme-light').addEventListener('click',()=>setTheme('light'));$('explorer-theme-dark').addEventListener('click',()=>setTheme('dark'));
+// Eventos y atajos.
+for(const el of document.querySelectorAll('input[type="radio"]'))el.addEventListener('change',e=>{if(!e.target.checked)return;const k=e.target.name;state[k]=e.target.value;persist();renderSelected()});
+for(const k of ['name','description','version'])$(k).addEventListener('input',e=>{state[k]=e.target.value;persist();if(['name','version'].includes(k))validate(false)});
+$('selected-list').addEventListener('click',e=>{const remove=e.target.closest('[data-remove]'),custom=e.target.closest('[data-remove-custom]');if(remove)toggleDependency(remove.dataset.remove);else if(custom){state.custom.splice(Number(custom.dataset.removeCustom),1);persist();renderSelected()}});
+$('theme-light').addEventListener('click',()=>setTheme('light'));
+$('theme-dark').addEventListener('click',()=>setTheme('dark'));
+for(const id of ['ui-language','explorer-ui-language'])$(id).addEventListener('change',e=>applyLanguage(e.target.value));
+$('add-dependencies').addEventListener('click',openCatalog);
+$('generate-button').addEventListener('click',generate);$('explore-button').addEventListener('click',openExplorer);
+$('menu-button').addEventListener('click',drawer);
+$('history-button').addEventListener('click',openHistory);
+for(const id of ['close-catalog','close-drawer','close-history'])$(id).addEventListener('click',closeOverlays);
+$('dep-search').addEventListener('input',e=>{searchText=e.target.value;catalogIndex=-1;renderCatalog();$('catalog-list').scrollTop=0});
+$('catalog-list').addEventListener('click',e=>{const b=e.target.closest('[data-dep]');if(b){catalogIndex=-1;toggleDependency(b.dataset.dep);if(!(e.ctrlKey||e.metaKey))closeOverlays();else $('dep-search').focus({preventScroll:true})}});
+
+
+$('history-content').addEventListener('click',e=>{
+ const btn=e.target.closest('button[data-restore],button[data-delete-history],button[data-rename],button[data-favorite]');if(!btn)return;
+ const i=Number(btn.dataset.restore??btn.dataset.deleteHistory??btn.dataset.rename??btn.dataset.favorite),h=history[i];if(!h)return;
+ if(btn.hasAttribute('data-restore')){state=normalize(h.state);persist();applyState();closeOverlays();notify(tr('restored'))}
+ else if(btn.hasAttribute('data-delete-history')){history.splice(i,1);storageSet(HISTORY_STORE,history);updateHistoryVisible();renderHistory();if(!history.length)closeOverlays()}
+ else if(btn.hasAttribute('data-favorite')){h.favorite=!h.favorite;storageSet(HISTORY_STORE,history);renderHistory()}
+ else if(btn.hasAttribute('data-rename')){
+  const node=btn.closest('.history-entry').querySelector('.history-text strong');const input=document.createElement('input');input.className='history-rename-input';input.value=h.label||h.state.name;node.replaceWith(input);input.focus();input.select();let handled=false;
+  const commit=save=>{if(handled)return;handled=true;if(save&&input.value.trim().length<=80&&input.value.trim()){h.label=input.value.trim();storageSet(HISTORY_STORE,history)}renderHistory()};
+  input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();commit(true)}if(event.key==='Escape'){event.preventDefault();event.stopPropagation();commit(false)}});input.addEventListener('blur',()=>commit(true));
+ }
+});
+$('clear-history').addEventListener('click',()=>{if(!history.length)return;{history=[];storageSet(HISTORY_STORE,history);updateHistoryVisible();renderHistory();closeOverlays()}});
+$('drawer-content').addEventListener('click',e=>{const b=e.target.closest('[data-menu]');if(!b)return;const action=b.dataset.menu;closeOverlays();if(action==='catalog')openCatalog();if(action==='history')openHistory()});
+for(const id of OVERLAYS)$(id).addEventListener('click',e=>{if(e.target===$(id))closeOverlays()});
+let menuTouchY=0;
+$('drawer-overlay').addEventListener('wheel',e=>{if(e.deltaY>8)closeOverlays()},{passive:true});
+$('drawer-overlay').addEventListener('touchstart',e=>{menuTouchY=e.touches[0]?.clientY||0},{passive:true});
+$('drawer-overlay').addEventListener('touchmove',e=>{if(menuTouchY-(e.touches[0]?.clientY||0)>35)closeOverlays()},{passive:true});
+window.addEventListener('keydown',e=>{
+ const mod=e.ctrlKey||e.metaKey,editing=!!e.target.closest('input,textarea,select,[contenteditable="true"]'),activeId=OVERLAYS.find(id=>!$(id).classList.contains('hidden'));
+ if(explorerVisible()){if(e.key==='Escape'){e.preventDefault();closeExplorer();return}if(mod&&e.key==='Enter'){e.preventDefault();explorerDownload();return}if(mod&&e.code==='Space'){e.preventDefault();closeExplorer();return}if(e.key==='Tab'){const btns=[...$('explorer-overlay').querySelectorAll('button:not([disabled]),a[href]')].filter(n=>n.getClientRects().length);if(btns.length){const first=btns[0],last=btns[btns.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}}return}
+ if(e.key==='Escape'&&activeId){e.preventDefault();closeOverlays();return}
+ if(mod&&e.key.toLowerCase()==='b'&&!editing){e.preventDefault();closeOverlays();openCatalog();return}
+ if(mod&&e.code==='Space'&&!activeId){e.preventDefault();openExplorer();return}
+ if(mod&&e.key==='Enter'&&!activeId){e.preventDefault();generate();return}
+ if(activeId==='catalog-overlay'&&(!editing||e.target===$('dep-search'))){const results=matchingCatalog();if(e.key==='ArrowDown'){e.preventDefault();catalogIndex=(catalogIndex+1)%Math.max(1,results.length);renderCatalog();setFocusCatalog()}else if(e.key==='ArrowUp'){e.preventDefault();catalogIndex=(catalogIndex-1+Math.max(1,results.length))%Math.max(1,results.length);renderCatalog();setFocusCatalog()}else if(e.key==='Enter'&&results.length){e.preventDefault();if(catalogIndex<0)catalogIndex=0;toggleDependency(results[catalogIndex].id);if(e.ctrlKey||e.metaKey)setFocusCatalog();else closeOverlays()}}
+ if(e.key==='Tab'&&activeId){const panel=$(activeId).querySelector('[role="dialog"]');const focusable=[...panel.querySelectorAll('button:not([disabled]),input:not([disabled]),a[href]')].filter(n=>n.getClientRects().length>0);if(focusable.length){const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}}
+});
+
+applyState();updateHistoryVisible();applyLanguage(uiLang);
+</script>
+</body>
+</html>
